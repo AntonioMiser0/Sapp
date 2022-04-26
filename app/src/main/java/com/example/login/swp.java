@@ -1,11 +1,10 @@
-package com.example.sapp;
+package com.example.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
@@ -13,7 +12,7 @@ import com.lorentzos.flingswipe.SwipeFlingAdapterView;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class swp extends AppCompatActivity {
 
     private ArrayList<String> al;
     private ArrayAdapter<String> arrayAdapter;
@@ -24,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_swp);
 
 
 
@@ -56,12 +55,12 @@ public class MainActivity extends AppCompatActivity {
                 //Do something on the left!
                 //You also have access to the original object.
                 //If you want to use it just cast it (String) dataObject
-                Toast.makeText(MainActivity.this, "Left!",Toast.LENGTH_SHORT).show();
+                Toast.makeText(swp.this, "Left!",Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onRightCardExit(Object dataObject) {
-                Toast.makeText(MainActivity.this, "Right!",Toast.LENGTH_SHORT).show();
+                Toast.makeText(swp.this, "Right!",Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -84,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         flingContainer.setOnItemClickListener(new SwipeFlingAdapterView.OnItemClickListener() {
             @Override
             public void onItemClicked(int itemPosition, Object dataObject) {
-                Toast.makeText(MainActivity.this, "Click",Toast.LENGTH_SHORT).show();
+                Toast.makeText(swp.this, "Click",Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -94,6 +93,4 @@ public class MainActivity extends AppCompatActivity {
     static void makeToast(Context ctx, String s){
         Toast.makeText(ctx, s, Toast.LENGTH_SHORT).show();
     }
-
-
 }

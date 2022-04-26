@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Login">
         <activity
+            android:name=".znj"
+            android:exported="false" />
+        <activity
+            android:name=".swp"
+            android:exported="false" />
+        <activity
             android:name=".swipe"
             android:exported="false" />
         <activity
