@@ -3,14 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Leon/AndroidStudioProjects/login/app/src/main/res/layout/activity_forgot_password.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Leon/AndroidStudioProjects/login/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Leon/AndroidStudioProjects/login/app/src/main/res/layout/activity_profile.xml" value="0.10460992907801418" />
-        <entry key="..\:/Users/Leon/AndroidStudioProjects/login/app/src/main/res/layout/activity_register_user.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Leon/AndroidStudioProjects/login/app/src/main/res/layout/activity_swipe.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Leon/AndroidStudioProjects/login/app/src/main/res/layout/activity_swp.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Leon/AndroidStudioProjects/login/app/src/main/res/layout/activity_znj.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Leon/AndroidStudioProjects/login/app/src/main/res/layout/item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_login.xml" value="0.203125" />
+        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_splash.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_swipe.xml" value="0.2388888888888889" />
+        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_swp.xml" value="0.2388888888888889" />
+        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_znj.xml" value="0.2388888888888889" />
+        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/item.xml" value="0.1" />
       </map>
     </option>
   </component>
