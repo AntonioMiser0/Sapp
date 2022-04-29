@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="445dp"
-        android:layout_height="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="445dp"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/tplava">
 
     <ImageView
@@ -15,29 +16,39 @@
         android:src="@drawable/backlogin" />
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="500dp"
-        android:layout_height="500dp"
+        android:layout_width="450dp"
+        android:layout_height="450dp"
         android:layout_marginLeft="-31dp"
         android:layout_marginTop="20dp"
         android:src="@drawable/logotext" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:layout_width="180dp"
         android:layout_height="80dp"
         android:id="@+id/login"
         android:layout_below="@+id/back"
         android:layout_marginTop="-150dp"
         android:layout_marginLeft="25dp"
-
+app:strokeColor="@color/siva"
+        android:textColor="@color/bijela"
+        app:strokeWidth="1dp"
+        android:text="Login"
+        android:fontFamily="@font/regular"
+        android:textSize="30dp"
         android:backgroundTint="@color/svjezelena" />
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:layout_width="180dp"
         android:layout_height="80dp"
         android:id="@+id/register"
         android:layout_below="@+id/back"
         android:layout_toRightOf="@+id/login"
         android:layout_marginTop="-150dp"
-
+        app:strokeColor="@color/siva"
+        app:strokeWidth="1dp"
+        android:text="register"
+        android:textColor="@color/bijela"
+        android:fontFamily="@font/regular"
+        android:textSize="30dp"
         android:backgroundTint="@color/svjplava" />
 
 
