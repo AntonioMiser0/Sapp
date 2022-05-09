@@ -5,22 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.lorentzos.flingswipe.SwipeFlingAdapterView
-        android:id="@+id/frame"
-        android:layout_width="413dp"
-        android:layout_height="594dp"
-        android:background="#ffeee9e2"
+    <TextView
+        android:id="@+id/swpcards"
+        android:layout_width="172dp"
+        android:layout_height="260dp"
+        android:background="@color/svjezelena"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.548"
         app:layout_constraintStart_toStartOf="parent"
-        app:rotation_degrees="15.5"
-       />
-
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.789" />
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-
-

@@ -27,7 +27,7 @@ public class swp extends AppCompatActivity {
 
 
 
-        al = new ArrayList<>();
+        al = new ArrayList<String>();
         al.add("php");
         al.add("c");
         al.add("python");
@@ -36,12 +36,11 @@ public class swp extends AppCompatActivity {
         al.add("c++");
         al.add("css");
         al.add("javascript");
+        SwipeFlingAdapterView swipeFlingAdapterView=(SwipeFlingAdapterView)findViewById(R.id.frame);
 
-        arrayAdapter = new ArrayAdapter<>(this, R.layout.item, R.id.helloText, al );
-
-        SwipeFlingAdapterView flingContainer=(SwipeFlingAdapterView) findViewById(R.id.frame);
-        flingContainer.setAdapter(arrayAdapter);
-        flingContainer.setFlingListener(new SwipeFlingAdapterView.onFlingListener() {
+        arrayAdapter = new ArrayAdapter<>(this, R.layout.details, R.id.swpcards,al  );
+        swipeFlingAdapterView.setAdapter(arrayAdapter);
+        swipeFlingAdapterView.setFlingListener(new SwipeFlingAdapterView.onFlingListener() {
             @Override
             public void removeFirstObjectInAdapter() {
                 // this is the simplest way to delete an object from the Adapter (/AdapterView)
@@ -80,13 +79,8 @@ public class swp extends AppCompatActivity {
 
 
         // Optionally add an OnItemClickListener
-        flingContainer.setOnItemClickListener(new SwipeFlingAdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClicked(int itemPosition, Object dataObject) {
-                Toast.makeText(swp.this, "Click",Toast.LENGTH_SHORT).show();
 
-            }
-        });
+
 
     }
 
