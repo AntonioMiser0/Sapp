@@ -5,9 +5,12 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -25,12 +28,13 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
-public class swp extends AppCompatActivity {
+public class swp extends AppCompatActivity implements View.OnClickListener{
     cards cards_data[];
     private ArrayList<String> al;
     private arrayAdapter arrayAdapter;
     private int i;
     private ImageView slika;
+    private Button profil;
     ListView listView;
     List<cards> rowItems;
     @Override
@@ -38,6 +42,8 @@ public class swp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_swp);
 
+        profil=(Button) findViewById(R.id.profil);
+        profil.setOnClickListener(swp.this);
         rowItems = new ArrayList<cards>();
 
         arrayAdapter = new arrayAdapter(this, R.layout.details, rowItems );
@@ -80,13 +86,15 @@ public class swp extends AppCompatActivity {
 
             }
         });
-
-
-
-
-
     }
-
+    @Override
+    public void onClick(View v){
+        switch (v.getId()){
+            case R.id.profil:
+                startActivity(new Intent(swp.this, ProfileActivity.class));
+                break;
+        }
+    }
     private void addEvent() {
 
             final FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
