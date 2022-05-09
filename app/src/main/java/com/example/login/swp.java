@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -22,34 +23,33 @@ import com.lorentzos.flingswipe.SwipeFlingAdapterView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class swp extends AppCompatActivity {
-
+    cards cards_data[];
     private ArrayList<String> al;
-    private ArrayAdapter<String> arrayAdapter;
+    private arrayAdapter arrayAdapter;
     private int i;
     private ImageView slika;
-
-
+    ListView listView;
+    List<cards> rowItems;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_swp);
 
+        rowItems = new ArrayList<cards>();
+
+        arrayAdapter = new arrayAdapter(this, R.layout.details, rowItems );
         addEvent();
-
-        al = new ArrayList<String>();
-        al.add("php");
-        SwipeFlingAdapterView swipeFlingAdapterView=(SwipeFlingAdapterView)findViewById(R.id.frame);
-
-        arrayAdapter = new ArrayAdapter<>(this, R.layout.details, R.id.swpcards,al  );
-        swipeFlingAdapterView.setAdapter(arrayAdapter);
-        swipeFlingAdapterView.setFlingListener(new SwipeFlingAdapterView.onFlingListener() {
+        SwipeFlingAdapterView flingContainer=(SwipeFlingAdapterView) findViewById(R.id.frame);
+        flingContainer.setAdapter(arrayAdapter);
+        flingContainer.setFlingListener(new SwipeFlingAdapterView.onFlingListener() {
             @Override
             public void removeFirstObjectInAdapter() {
                 // this is the simplest way to delete an object from the Adapter (/AdapterView)
                 Log.d("LIST", "removed object!");
-                al.remove(0);
+                rowItems.remove(0);
                 arrayAdapter.notifyDataSetChanged();
             }
 
@@ -91,46 +91,30 @@ public class swp extends AppCompatActivity {
 
             final FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
 
-            DatabaseReference eventsDb= FirebaseDatabase.getInstance().getReference().child("Users").child("Event");
+            DatabaseReference eventsDb= FirebaseDatabase.getInstance().getReference().child("Users");
             eventsDb.addChildEventListener(new ChildEventListener() {
                 @Override
                 public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                     if(snapshot.exists()){
-                        String picture="";
-                        slika=(ImageView)(findViewById(R.id.event_pic));
-                        if(!snapshot.child("pictureUrl").getValue().equals("")){
-                            picture=snapshot.child("pictureUrl").getValue().toString();
-
-                        }
-
-                        al.add(snapshot.child("Event").child("name").getValue().toString());
-                       // al.add(Picasso.get().load(picture).into(slika));
+                        cards Item=new cards(snapshot.getKey(),snapshot.child("Event").child("name").getValue().toString(),snapshot.child("Event").child("pictureUrl").getValue().toString());
+                        rowItems.add(Item);
                         arrayAdapter.notifyDataSetChanged();
                     }
+
                 }
+                @Override
+                public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) { }
 
                 @Override
-                public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-                }
+                public void onChildRemoved(@NonNull DataSnapshot snapshot) {}
 
                 @Override
-                public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-
-                }
+                public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {}
 
                 @Override
-                public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-
-                }
+                public void onCancelled(@NonNull DatabaseError error) {}
             });
     }
-
     static void makeToast(Context ctx, String s){
         Toast.makeText(ctx, s, Toast.LENGTH_SHORT).show();
     }

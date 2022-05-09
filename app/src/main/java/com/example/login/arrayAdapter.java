@@ -23,8 +23,8 @@ public class arrayAdapter extends ArrayAdapter<cards>
     public View getView(int position, View convertView, ViewGroup parent){
         cards card_item=getItem(position);
         if(convertView==null)
-        convertView= LayoutInflater.from(getContext()).inflate(R.layout.item,parent,false);
-    TextView name=(TextView) convertView.findViewById(R.id.swpcards);
+        convertView= LayoutInflater.from(getContext()).inflate(R.layout.details,parent,false);
+    TextView name=(TextView) convertView.findViewById(R.id.swpcard);
     ImageView image=(ImageView) convertView.findViewById(R.id.event_pic);
 
     name.setText(card_item.getName());
