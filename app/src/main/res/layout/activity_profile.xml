@@ -12,5 +12,6 @@
         android:layout_height="wrap_content"
         android:text="Uspješno ste se ulogirali"
         tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="74dp" />
+        tools:layout_editor_absoluteY="74dp"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Login">
         <activity
-            android:name=".MainActivity"
+            android:name=".EventsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginOrRegister"
             android:exported="false" />
         <activity
             android:name=".Login"
-            android:exported="false" />
-        <activity
-            android:name=".znj"
             android:exported="false" />
         <activity
             android:name=".swp"

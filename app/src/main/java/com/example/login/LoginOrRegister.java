@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class LoginOrRegister extends AppCompatActivity implements View.OnClickListener {
     private Button login1;
     private Button register1;
     @Override
@@ -19,18 +19,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         login1=(Button) findViewById(R.id.login);
         register1=(Button) findViewById(R.id.register);
-        login1.setOnClickListener(MainActivity.this);
+        login1.setOnClickListener(LoginOrRegister.this);
         register1.setOnClickListener(this);
     }
     @Override
     public void onClick(View v){
         switch (v.getId()){
             case R.id.register:
-                startActivity(new Intent(MainActivity.this, RegisterUser.class));
+                startActivity(new Intent(LoginOrRegister.this, RegisterUser.class));
                 break;
 
             case R.id.login:
-                startActivity(new Intent(MainActivity.this, Login.class));
+                startActivity(new Intent(LoginOrRegister.this, Login.class));
         }
     }
 }
