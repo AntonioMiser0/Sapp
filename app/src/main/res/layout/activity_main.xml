@@ -34,7 +34,7 @@
         android:fontFamily="@font/regular"
         android:text="Login"
         android:textColor="@color/bijela"
-        android:textSize="28sp"
+        android:textSize="26sp"
         app:strokeColor="@color/siva"
         app:strokeWidth="1dp" />
 
@@ -49,7 +49,7 @@
         android:fontFamily="@font/regular"
         android:text="register"
         android:textColor="@color/bijela"
-        android:textSize="24sp"
+        android:textSize="26sp"
         app:strokeColor="@color/siva"
         app:strokeWidth="1dp" />
 
