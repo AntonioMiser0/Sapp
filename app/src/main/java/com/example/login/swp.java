@@ -91,7 +91,7 @@ public class swp extends AppCompatActivity implements View.OnClickListener{
     public void onClick(View v){
         switch (v.getId()){
             case R.id.profil:
-                startActivity(new Intent(swp.this, ProfileActivity.class));
+                startActivity(new Intent(swp.this, Profil.class));
                 break;
         }
     }

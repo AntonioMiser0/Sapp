@@ -3,21 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#252525">
 
 
-    <com.lorentzos.flingswipe.SwipeFlingAdapterView
-        android:id="@+id/frame"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:background="#ffeee9e2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guideline1"
-        app:layout_constraintVertical_bias="0.0"
-        tools:context=".swp" />
 
 
 
@@ -34,6 +23,23 @@
         app:layout_constraintVertical_bias="0.536"
         app:srcCompat="@drawable/bar" />
 
+    <ImageView
+        android:id="@+id/backProfil"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/back"
+        app:srcCompat="@drawable/backprofil"
+        android:translationZ="-1dp"
+      />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="-0.05" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
@@ -79,11 +85,11 @@
         app:layout_constraintGuide_percent="0.475" />
 
     <androidx.constraintlayout.widget.Guideline
-    android:id="@+id/lpoc"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    app:layout_constraintGuide_percent="0.525" />
+        android:id="@+id/lpoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.525" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/dpoc"
         android:layout_width="wrap_content"
@@ -154,6 +160,25 @@
         android:layout_marginLeft="2dp"
         app:layout_constraintRight_toRightOf="@id/dl"
         app:layout_constraintTop_toTopOf="@id/gore" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/register"
+        android:layout_width="180dp"
+        android:layout_height="190dp"
+        android:layout_below="@+id/back"
+
+        android:layout_marginStart="116dp"
+        android:layout_marginBottom="420dp"
+        android:backgroundTint="@color/svjplava"
+        android:fontFamily="@font/regular"
+        android:text="Profilna"
+        android:textColor="@color/bijela"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="@+id/backProfil"
+        app:layout_constraintStart_toStartOf="@+id/backProfil"
+        app:shapeAppearanceOverlay="@style/Circular"
+        app:strokeColor="@color/siva"
+        app:strokeWidth="4dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
