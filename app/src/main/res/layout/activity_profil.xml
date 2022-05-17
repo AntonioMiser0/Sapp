@@ -31,6 +31,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@id/back"
+        app:layout_constraintBottom_toBottomOf="@id/logo"
         app:srcCompat="@drawable/backprofil"
         android:translationZ="-1dp"
       />
@@ -41,11 +42,44 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="-0.05" />
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/tekst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/tekst1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.92" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.20" />
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/profilna"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.45" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gore"
         android:layout_width="wrap_content"
@@ -114,8 +148,7 @@
         android:id="@+id/profil"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginTop="2dp"
+        android:layout_margin="5dp"
         android:background="@drawable/profil"
         app:layout_constraintBottom_toBottomOf="@id/guideline1"
         app:layout_constraintHorizontal_bias="1.0"
@@ -132,8 +165,7 @@
         app:layout_constraintBottom_toBottomOf="@id/guideline1"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@id/lk"
-        android:layout_marginTop="2dp"
-        android:layout_marginLeft="2dp"
+        android:layout_margin="5dp"
         app:layout_constraintRight_toRightOf="@id/dk"
         app:layout_constraintTop_toTopOf="@id/gore" />
     <Button
@@ -144,8 +176,7 @@
         app:layout_constraintBottom_toBottomOf="@id/guideline1"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@id/lpoc"
-        android:layout_marginTop="2dp"
-        android:layout_marginLeft="2dp"
+        android:layout_margin="5dp"
         app:layout_constraintRight_toRightOf="@id/dpoc"
         app:layout_constraintTop_toTopOf="@id/gore" />
     <Button
@@ -156,29 +187,74 @@
         app:layout_constraintBottom_toBottomOf="@id/guideline1"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@id/ll"
-        android:layout_marginTop="2dp"
-        android:layout_marginLeft="2dp"
+        android:layout_margin="5dp"
         app:layout_constraintRight_toRightOf="@id/dl"
         app:layout_constraintTop_toTopOf="@id/gore" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/register"
-        android:layout_width="180dp"
-        android:layout_height="190dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_below="@+id/back"
-
-        android:layout_marginStart="116dp"
-        android:layout_marginBottom="420dp"
         android:backgroundTint="@color/svjplava"
         android:fontFamily="@font/regular"
         android:text="Profilna"
         android:textColor="@color/bijela"
-        android:textSize="26sp"
-        app:layout_constraintBottom_toBottomOf="@+id/backProfil"
-        app:layout_constraintStart_toStartOf="@+id/backProfil"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="@id/guideline3"
+        app:layout_constraintLeft_toLeftOf="@id/lk"
+        app:layout_constraintRight_toRightOf="@id/dpoc"
         app:shapeAppearanceOverlay="@style/Circular"
         app:strokeColor="@color/siva"
         app:strokeWidth="4dp" />
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/logo1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/lp"
+        app:layout_constraintRight_toRightOf="@id/lpoc"
+        app:layout_constraintTop_toTopOf="@id/logo"/>
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/tekstsapp"
+        app:layout_constraintBottom_toBottomOf="@id/tekst1"
+        app:layout_constraintLeft_toLeftOf="@id/dk"
+        app:layout_constraintRight_toRightOf="@id/dl"
+        app:layout_constraintTop_toTopOf="@id/tekst"/>
+
+    <ImageView
+        android:layout_width="2dp"
+        android:layout_height="0dp"
+        android:background="@drawable/podjela"
+        app:layout_constraintBottom_toBottomOf="@id/edit"
+        app:layout_constraintLeft_toLeftOf="@id/dk"
+        app:layout_constraintRight_toRightOf="@id/lpoc"
+        app:layout_constraintTop_toTopOf="@id/profilna"/>
+
+    <Button
+        android:id="@+id/postavke"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/postavke1"
+        app:layout_constraintBottom_toBottomOf="@id/edit"
+        app:layout_constraintLeft_toLeftOf="@id/lpoc"
+        app:layout_constraintRight_toRightOf="@id/ll"
+        app:layout_constraintTop_toTopOf="@id/profilna"
+        android:layout_margin="10dp"
+       />
+    <Button
+        android:id="@+id/uredivanje"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/edit"
+        app:layout_constraintBottom_toBottomOf="@id/edit"
+        app:layout_constraintLeft_toLeftOf="@id/dp"
+        app:layout_constraintRight_toRightOf="@id/dk"
+        app:layout_constraintTop_toTopOf="@id/profilna"
+        android:layout_margin="10dp"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

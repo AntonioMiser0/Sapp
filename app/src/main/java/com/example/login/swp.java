@@ -30,10 +30,9 @@ import java.util.List;
 
 public class swp extends AppCompatActivity implements View.OnClickListener{
     cards cards_data[];
-    private ArrayList<String> al;
+
     private arrayAdapter arrayAdapter;
     private int i;
-    private ImageView slika;
     private Button profil;
     ListView listView;
     List<cards> rowItems;
