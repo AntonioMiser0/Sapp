@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Login">
         <activity
+            android:name=".Lista"
+            android:exported="false" />
+        <activity
+            android:name=".Uredivanje"
+            android:exported="false" />
+        <activity
             android:name=".Profil"
             android:exported="false" />
         <activity
