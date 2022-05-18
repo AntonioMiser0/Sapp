@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.login">
-
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,31 +16,31 @@
             android:name=".Uredivanje"
             android:exported="false" />
         <activity
-            android:name=".Profil"
+            android:name="com.example.login.Profil"
             android:exported="false" />
         <activity
-            android:name=".EventsActivity"
+            android:name="com.example.login.EventsActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginOrRegister"
+            android:name="com.example.login.LoginOrRegister"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name="com.example.login.Login"
             android:exported="false" />
         <activity
-            android:name=".swp"
+            android:name="com.example.login.swp"
             android:exported="false" />
         <activity
-            android:name=".ForgotPassword"
+            android:name="com.example.login.ForgotPassword"
             android:exported="false" />
         <activity
-            android:name=".ProfileActivity"
+            android:name="com.example.login.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterUser"
+            android:name="com.example.login.RegisterUser"
             android:exported="false" />
         <activity
-            android:name=".SplashActivity"
+            android:name="com.example.login.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

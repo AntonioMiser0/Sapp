@@ -4,14 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.people.PeopleManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -23,14 +22,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.lorentzos.flingswipe.SwipeFlingAdapterView;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class swp extends AppCompatActivity implements View.OnClickListener{
-    cards cards_data[];
-
     private arrayAdapter arrayAdapter;
     private int i;
     private Button profil;
@@ -74,7 +70,7 @@ public class swp extends AppCompatActivity implements View.OnClickListener{
             @Override
             public void onAdapterAboutToEmpty(int itemsInAdapter) {
                 // Ask for more data here
-               // al.add("XML ".concat(String.valueOf(i)));
+                // al.add("XML ".concat(String.valueOf(i)));
                 //arrayAdapter.notifyDataSetChanged();
                 //Log.d("LIST", "notified");
                 //i++;
@@ -90,7 +86,7 @@ public class swp extends AppCompatActivity implements View.OnClickListener{
     public void onClick(View v){
         switch (v.getId()){
             case R.id.profil:
-                startActivity(new Intent(swp.this, Profil.class));
+                startActivity(new Intent(swp.this, EventsActivity.class));
                 break;
         }
     }
