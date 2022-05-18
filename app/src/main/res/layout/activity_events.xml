@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/tplava"
+    tools:context=".ProfileActivity">
+
+    <TextView
+        android:id="@+id/banner_event"
+        android:layout_width="400dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        android:text="Saap"
+        android:textAlignment="center"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/location"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Location"
+        android:layout_width="0dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="116dp"
+        android:layout_marginEnd="182dp"
+        android:layout_marginBottom="120dp"
+        android:text="LOKACIJA:"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/Description"
+        app:layout_constraintEnd_toStartOf="@+id/location"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/location"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:hint="Upisi lokaciju"
+        android:inputType="textPostalAddress"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.906"
+        app:layout_constraintStart_toEndOf="@+id/Location"
+        app:layout_constraintTop_toBottomOf="@+id/banner_event"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/Date"
+        android:layout_width="0dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="182dp"
+        android:layout_marginBottom="60dp"
+        android:text="DATUM:"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/Description"
+        app:layout_constraintEnd_toStartOf="@+id/date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/Location"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/date"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="9dp"
+        android:ems="10"
+        android:hint="Upisi datum"
+        android:inputType="date"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.906"
+        app:layout_constraintStart_toEndOf="@+id/Date"
+        app:layout_constraintTop_toBottomOf="@+id/location"
+        tools:ignore="MissingConstraints" />
+
+
+    <TextView
+        android:id="@+id/Picture"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="557dp"
+        android:text="SLIKA:"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/Description"
+        app:layout_constraintStart_toStartOf="@+id/category"
+        app:layout_constraintTop_toBottomOf="@+id/category"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/picture"
+        android:layout_width="207dp"
+        android:layout_height="203dp"
+        android:layout_marginBottom="168dp"
+        android:clickable="true"
+        android:src="@drawable/event_photo"
+        app:layout_constraintBottom_toTopOf="@+id/add_event"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/category"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="13dp"
+        android:text="KATEGORIJA"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/Picture"
+        app:layout_constraintEnd_toStartOf="@+id/Category"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/Description"
+        android:layout_width="0dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="121dp"
+        android:text="OPIS"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/picture"
+        app:layout_constraintEnd_toStartOf="@+id/Category"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/location"
+        tools:ignore="MissingConstraints" />
+
+    <Spinner
+        android:id="@+id/Category"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="206dp"
+        android:hint="Odaberi kategoriju"
+        app:layout_constraintBottom_toBottomOf="@+id/category"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/category"
+        app:layout_constraintTop_toBottomOf="@+id/description"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/description"
+        android:layout_width="239dp"
+        android:layout_height="0dp"
+        android:ems="10"
+        android:hint="Dodaj opis"
+        android:inputType="text"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/category"
+        app:layout_constraintHorizontal_bias="0.906"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/add_event"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="80dp"
+        android:text="DODAJ DOGAĐAJ"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
