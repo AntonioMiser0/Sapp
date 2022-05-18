@@ -16,6 +16,12 @@
             android:name=".EventsActivity"
             android:exported="false" />
         <activity
+            android:name=".Uredivanje"
+            android:exported="false" />
+        <activity
+            android:name=".Lista"
+            android:exported="false" />
+        <activity
             android:name=".LoginOrRegister"
             android:exported="false" />
         <activity

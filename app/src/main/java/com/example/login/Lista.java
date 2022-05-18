@@ -10,18 +10,25 @@ import android.widget.ImageButton;
 
 public class Lista extends AppCompatActivity implements View.OnClickListener {
     private ImageButton events;
+    private Button pocetna;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista);
         events=findViewById(R.id.events);
         events.setOnClickListener(Lista.this);
+        pocetna=findViewById(R.id.pocetna);
+        pocetna.setOnClickListener(Lista.this);
     }
     @Override
     public void onClick(View v){
         switch (v.getId()){
             case R.id.events:
                 startActivity(new Intent(Lista.this, EventsActivity.class));
+                break;
+            case R.id.pocetna:
+                startActivity(new Intent(Lista.this, swp.class));
                 break;
 
         }
