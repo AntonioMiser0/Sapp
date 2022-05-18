@@ -16,22 +16,19 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@id/guideline1"
-        app:layout_constraintVertical_bias="0.0"
         tools:context=".swp" />
-
-
 
 
     <ImageView
         android:id="@+id/bar"
-        android:layout_width="557dp"
-        android:layout_height="301dp"
+        android:layout_width="500dp"
+        android:layout_height="250dp"
         app:layout_constraintBottom_toBottomOf="@id/guideline3"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.536"
+        app:layout_constraintVertical_bias="0.75"
         app:srcCompat="@drawable/bar" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -40,6 +37,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.20" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gore"
         android:layout_width="wrap_content"
