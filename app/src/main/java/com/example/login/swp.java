@@ -30,6 +30,7 @@ public class swp extends AppCompatActivity implements View.OnClickListener{
     private arrayAdapter arrayAdapter;
     private int i;
     private Button profil;
+    private Button lista;
     ListView listView;
     List<cards> rowItems;
     @Override
@@ -39,6 +40,8 @@ public class swp extends AppCompatActivity implements View.OnClickListener{
 
         profil=(Button) findViewById(R.id.profil);
         profil.setOnClickListener(swp.this);
+        lista=(Button) findViewById(R.id.lista);
+        lista.setOnClickListener(swp.this);
         rowItems = new ArrayList<cards>();
 
         arrayAdapter = new arrayAdapter(this, R.layout.details, rowItems );
@@ -86,8 +89,10 @@ public class swp extends AppCompatActivity implements View.OnClickListener{
     public void onClick(View v){
         switch (v.getId()){
             case R.id.profil:
-                startActivity(new Intent(swp.this, EventsActivity.class));
+                startActivity(new Intent(swp.this, Profil.class));
                 break;
+            case R.id.lista:
+                startActivity(new Intent(swp.this, Lista.class));
         }
     }
     private void addEvent() {

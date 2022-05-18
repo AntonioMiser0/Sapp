@@ -151,16 +151,18 @@
         app:layout_constraintRight_toRightOf="@id/dl"
         app:layout_constraintTop_toTopOf="@id/gore" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+
+
+    <ImageButton
+        android:id="@+id/events"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginRight="20dp"
-        android:background="@color/svjezelena"
-        android:clickable="true"
+        app:srcCompat="@drawable/gumb"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="@id/dpoc"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lpoc"
-        app:layout_constraintTop_toTopOf="@+id/gumb" />
+        app:layout_constraintTop_toTopOf="@+id/gumb"
+        app:cornerRadius="500dp"
+
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

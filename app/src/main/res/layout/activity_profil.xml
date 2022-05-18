@@ -214,7 +214,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="@id/lp"
         app:layout_constraintRight_toRightOf="@id/lpoc"
-        app:layout_constraintTop_toTopOf="@id/logo"/>
+        app:layout_constraintTop_toTopOf="@id/logo"
+        android:layout_marginBottom="20dp"/>
     <ImageView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -222,7 +223,9 @@
         app:layout_constraintBottom_toBottomOf="@id/tekst1"
         app:layout_constraintLeft_toLeftOf="@id/dk"
         app:layout_constraintRight_toRightOf="@id/dl"
-        app:layout_constraintTop_toTopOf="@id/tekst"/>
+        app:layout_constraintTop_toTopOf="@id/tekst"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="20dp"/>
 
     <ImageView
         android:layout_width="2dp"
@@ -242,7 +245,7 @@
         app:layout_constraintLeft_toLeftOf="@id/lpoc"
         app:layout_constraintRight_toRightOf="@id/ll"
         app:layout_constraintTop_toTopOf="@id/profilna"
-        android:layout_margin="10dp"
+        android:layout_margin="15dp"
        />
     <Button
         android:id="@+id/uredivanje"
@@ -253,7 +256,7 @@
         app:layout_constraintLeft_toLeftOf="@id/dp"
         app:layout_constraintRight_toRightOf="@id/dk"
         app:layout_constraintTop_toTopOf="@id/profilna"
-        android:layout_margin="10dp"
+        android:layout_margin="15dp"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>
 

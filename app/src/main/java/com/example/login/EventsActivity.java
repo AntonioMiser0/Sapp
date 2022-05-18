@@ -70,11 +70,9 @@ public class EventsActivity extends AppCompatActivity {
         category=(Spinner) (findViewById(R.id.Category));
         slika=(ImageView)(findViewById(R.id.picture));
         addEvent=(Button)(findViewById(R.id.add_event));
-        Description=(TextView) (findViewById(R.id.Description));
         Naslov=(TextView) (findViewById(R.id.banner_event));
         Date=(TextView) (findViewById(R.id.Date));
         Location=(TextView) (findViewById(R.id.Location));
-        Category=(TextView) (findViewById(R.id.category));
         Picture =(TextView) (findViewById(R.id.Picture));
         mAuth = FirebaseAuth.getInstance();
         EventsDb= FirebaseDatabase.getInstance().getReference().child("Users").child(mAuth.getCurrentUser().getUid().toString()).child("Events");
