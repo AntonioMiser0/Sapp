@@ -9,7 +9,7 @@
     <com.lorentzos.flingswipe.SwipeFlingAdapterView
         android:id="@+id/frame"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:background="#ffeee9e2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -77,11 +77,11 @@
         app:layout_constraintGuide_percent="0.475" />
 
     <androidx.constraintlayout.widget.Guideline
-    android:id="@+id/lpoc"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    app:layout_constraintGuide_percent="0.525" />
+        android:id="@+id/lpoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.525" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/dpoc"
         android:layout_width="wrap_content"

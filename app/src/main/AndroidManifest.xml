@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.login">
-<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,37 +10,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Login">
         <activity
-            android:name=".Lista"
+            android:name=".Profil"
             android:exported="false" />
         <activity
-            android:name=".Uredivanje"
+            android:name=".EventsActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.login.Profil"
+            android:name=".LoginOrRegister"
             android:exported="false" />
         <activity
-            android:name="com.example.login.EventsActivity"
+            android:name=".Login"
             android:exported="false" />
         <activity
-            android:name="com.example.login.LoginOrRegister"
+            android:name=".swp"
             android:exported="false" />
         <activity
-            android:name="com.example.login.Login"
+            android:name=".ForgotPassword"
             android:exported="false" />
         <activity
-            android:name="com.example.login.swp"
+            android:name=".ProfileActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.login.ForgotPassword"
+            android:name=".RegisterUser"
             android:exported="false" />
         <activity
-            android:name="com.example.login.ProfileActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.login.RegisterUser"
-            android:exported="false" />
-        <activity
-            android:name="com.example.login.SplashActivity"
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
