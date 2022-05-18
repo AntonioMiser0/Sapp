@@ -38,9 +38,9 @@ public class swp extends AppCompatActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_swp);
 
-        profil=(Button) findViewById(R.id.profil);
+        profil= findViewById(R.id.profil);
         profil.setOnClickListener(swp.this);
-        lista=(Button) findViewById(R.id.lista);
+        lista= findViewById(R.id.lista);
         lista.setOnClickListener(swp.this);
         rowItems = new ArrayList<cards>();
 
