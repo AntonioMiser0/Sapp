@@ -10,6 +10,7 @@ import android.widget.Button;
 public class Profil extends AppCompatActivity implements View.OnClickListener {
 private Button  uredivanje;
 private Button pocetna;
+    private Button lista;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,6 +19,8 @@ private Button pocetna;
         uredivanje.setOnClickListener(Profil.this);
         pocetna= findViewById(R.id.pocetna);
         pocetna.setOnClickListener(Profil.this);
+        lista= findViewById(R.id.lista);
+        lista.setOnClickListener(Profil.this);
 
     }
     public void onClick(View v){
@@ -28,6 +31,11 @@ private Button pocetna;
             case R.id.pocetna:
                 startActivity(new Intent(Profil.this, swp.class));
                 break;
+
+            case R.id.lista:
+                startActivity(new Intent(Profil.this, Lista.class));
+                break;
+
 
         }
     }

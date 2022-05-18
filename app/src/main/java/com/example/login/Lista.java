@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 public class Lista extends AppCompatActivity implements View.OnClickListener {
     private ImageButton events;
     private Button pocetna;
+    private Button profil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +21,9 @@ public class Lista extends AppCompatActivity implements View.OnClickListener {
         events.setOnClickListener(Lista.this);
         pocetna=findViewById(R.id.pocetna);
         pocetna.setOnClickListener(Lista.this);
+        profil=findViewById(R.id.profil);
+        profil.setOnClickListener(Lista.this);
+
     }
     @Override
     public void onClick(View v){
@@ -30,6 +34,10 @@ public class Lista extends AppCompatActivity implements View.OnClickListener {
             case R.id.pocetna:
                 startActivity(new Intent(Lista.this, swp.class));
                 break;
+            case R.id.profil:
+                startActivity(new Intent(Lista.this, swp.class));
+                break;
+
 
         }
     }
