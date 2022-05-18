@@ -27,7 +27,7 @@ public class arrayAdapter extends ArrayAdapter<cards>
     ImageView image=(ImageView) convertView.findViewById(R.id.event_pic);
 
     name.setText(card_item.getName());
-    Glide.with(getContext()).load(card_item.getimageUrl()).into(image);
+    Glide.with(getContext()).load(card_item.getimageUrl()).centerCrop().into(image);
     return convertView;
     }
 }

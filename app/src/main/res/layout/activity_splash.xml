@@ -11,15 +11,37 @@
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/splash"
-        android:layout_width="484dp"
-        android:layout_height="769dp"
-        android:layout_marginLeft="-500dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
 
-        android:layout_marginEnd="-100dp"
         android:src="@drawable/splash"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/dolje"
+     app:layout_constraintRight_toRightOf="@id/desno"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintLeft_toLeftOf="@id/lijevo"
+        app:layout_constraintTop_toTopOf="@id/gore" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="-0.1" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/lijevo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="-0.1" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/desno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="1.1" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/dolje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="1.1" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.people.PeopleManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -28,17 +27,16 @@ import java.util.List;
 
 public class swp extends AppCompatActivity implements View.OnClickListener{
     private arrayAdapter arrayAdapter;
-    private int i;
     private Button profil;
     private Button lista;
-    ListView listView;
+
     List<cards> rowItems;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_swp);
 
-        profil= findViewById(R.id.profil);
+        profil=(Button) findViewById(R.id.profil);
         profil.setOnClickListener(swp.this);
         lista= findViewById(R.id.lista);
         lista.setOnClickListener(swp.this);
@@ -89,7 +87,7 @@ public class swp extends AppCompatActivity implements View.OnClickListener{
     public void onClick(View v){
         switch (v.getId()){
             case R.id.profil:
-                startActivity(new Intent(swp.this, EventsActivity.class));
+                startActivity(new Intent(swp.this, Profil.class));
                 break;
             case R.id.lista:
                 startActivity(new Intent(swp.this, Lista.class));

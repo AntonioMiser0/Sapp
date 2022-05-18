@@ -22,6 +22,12 @@
             android:name=".Login"
             android:exported="false" />
         <activity
+            android:name=".Uredivanje"
+            android:exported="false" />
+        <activity
+        android:name=".Lista"
+        android:exported="false" />
+        <activity
             android:name=".swp"
             android:exported="false" />
         <activity

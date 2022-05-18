@@ -29,7 +29,12 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
-
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/sjena"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.20" />
 
     <ImageView
         android:id="@+id/backProfil"
@@ -43,12 +48,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/backprofil" />
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/sjena"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.16" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/logo"
         android:layout_width="wrap_content"
@@ -201,6 +201,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/register"
+        android:layout_marginTop="10dp"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:backgroundTint="@color/svjplava"
