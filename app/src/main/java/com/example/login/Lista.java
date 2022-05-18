@@ -6,14 +6,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class Lista extends AppCompatActivity implements View.OnClickListener {
-    private Button events;
+    private ImageButton events;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista);
-        events=(Button) findViewById(R.id.events);
+        events=findViewById(R.id.events);
         events.setOnClickListener(Lista.this);
     }
     @Override
