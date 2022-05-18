@@ -104,6 +104,10 @@ addEvent.setOnClickListener(new View.OnClickListener() {
         eventInfo.put("location",loc);
         eventInfo.put("date",datum);
         EventsDb.updateChildren(eventInfo);
+        EventsDb.child("description").setValue(desc);
+        EventsDb.child("location").setValue(loc);
+        EventsDb.child("date").setValue(datum);
+
         if(resultUri!=null){
             StorageReference filepath= FirebaseStorage.getInstance().getReference().child("images").child(mAuth.getCurrentUser().getUid());
             Bitmap bitmap=null;
@@ -129,6 +133,7 @@ addEvent.setOnClickListener(new View.OnClickListener() {
                     Map eventInfo=new HashMap();
                     eventInfo.put("imageUrl",downloadUrl);
                     EventsDb.updateChildren(eventInfo);
+                    EventsDb.child("pictureUrl").setValue(downloadUrl);
 
                     finish();
 
