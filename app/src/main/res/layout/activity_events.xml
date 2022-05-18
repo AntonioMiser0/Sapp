@@ -4,7 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/tplava"
     tools:context=".ProfileActivity">
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="30dp"
+        android:layout_height="0dp"
+        android:translationZ="20dp"
+        android:background="@drawable/strelica"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/guideline3"/>
+    <TextView
+        android:id="@+id/barproba"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#98CBC2"
+        android:alpha="0.3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/guideline3"
+        />
 
     <TextView
         android:id="@+id/banner_event"
@@ -32,10 +63,15 @@
         android:id="@+id/location"
         android:layout_width="200dp"
         android:layout_height="50dp"
+        android:textColor="@color/bijela"
+        android:textColorHint="#70FFFFFF"
+        android:background="@drawable/zaedit"
         android:ems="10"
+        android:padding="10dp"
         android:hint="Upisi lokaciju"
         android:inputType="textPostalAddress"
         android:textSize="24sp"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/banner_event"
@@ -113,6 +149,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
+        android:textColor="#FFFFFF"
         android:id="@+id/add_event"
         android:layout_width="200dp"
         android:layout_height="100dp"
