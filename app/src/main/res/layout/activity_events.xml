@@ -6,18 +6,21 @@
     android:layout_height="match_parent"
     android:background="@color/tplava"
     tools:context=".ProfileActivity">
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.1" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/levo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.1" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/desno"
         android:layout_width="wrap_content"
@@ -29,30 +32,30 @@
         android:id="@+id/back"
         android:layout_width="30dp"
         android:layout_height="0dp"
-        android:translationZ="20dp"
-        android:background="@drawable/strelica"
+        android:layout_marginLeft="15dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
-        android:layout_marginLeft="15dp"
+        android:background="@drawable/strelica"
+        android:translationZ="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline3"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/guideline3"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/barproba"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#98CBC2"
         android:alpha="0.3"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:background="#98CBC2"
         app:layout_constraintBottom_toBottomOf="@id/guideline3"
-        />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/banner_event"
         android:layout_width="400dp"
         android:layout_height="0dp"
-        android:text="Saap"
+        android:text="Događaj"
         android:textAlignment="center"
         android:textSize="60sp"
         android:textStyle="bold"
@@ -62,29 +65,28 @@
 
     <EditText
         android:id="@+id/Location"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="50dp"
         android:background="@drawable/zaedit"
+        android:textSize="24sp"
+        android:textColor="@color/bijela"
+        android:textColorHint="#70FFFFFF"
         android:ems="10"
         android:hint="Upisi lokaciju"
         android:inputType="textPostalAddress"
         android:padding="10dp"
-        android:textColor="@color/bijela"
-        android:textColorHint="#70FFFFFF"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/date"
-        app:layout_constraintHorizontal_bias="0.274"
+
+        app:layout_constraintBottom_toTopOf="@+id/Date"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintLeft_toLeftOf="@id/levo"
         app:layout_constraintRight_toRightOf="@id/desno"
-        app:layout_constraintTop_toBottomOf="@+id/banner_event"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@+id/description"
         tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/Date"
-        android:layout_width="200dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginTop="28dp"
         android:background="@drawable/zaedit"
         android:ems="10"
         android:hint="Upisi datum"
@@ -92,73 +94,86 @@
         android:textColor="@color/bijela"
         android:textColorHint="#70FFFFFF"
         android:textSize="24sp"
-        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintBottom_toTopOf="@+id/Category"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintLeft_toLeftOf="@id/levo"
         app:layout_constraintRight_toRightOf="@id/desno"
-        app:layout_constraintTop_toBottomOf="@+id/banner_event"
+        app:layout_constraintTop_toBottomOf="@+id/Location"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/Picture"
-        android:layout_width="177dp"
-        android:layout_height="171dp"
-        android:layout_marginEnd="104dp"
-        android:text="SLIKA:"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/description"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/date"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:text="SLIKA"
+        android:background="@color/svjplava"
+        android:textSize="24sp"
+        android:textColor="#70000000"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/add_event"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="@id/levo"
+        app:layout_constraintRight_toRightOf="@id/desno"
+        app:layout_constraintTop_toBottomOf="@+id/Category"
         tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/picture"
         android:layout_width="207dp"
         android:layout_height="203dp"
-        android:layout_marginEnd="100dp"
         android:clickable="true"
         android:src="@drawable/logo"
-        app:layout_constraintBottom_toTopOf="@+id/add_event"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/description"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="@id/levo"
+        app:layout_constraintRight_toRightOf="@id/desno"
+        app:layout_constraintTop_toBottomOf="@+id/add_event"
         tools:ignore="MissingConstraints" />
 
     <Spinner
         android:id="@+id/Category"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="180dp"
-        android:layout_marginBottom="12dp"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
         android:hint="Odaberi kategoriju"
-        app:layout_constraintBottom_toTopOf="@+id/description"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/Picture"
+        android:background="@drawable/zaedit"
+        android:textSize="24sp"
+        android:textColor="@color/bijela"
+        android:textColorHint="#70FFFFFF"
+        app:layout_constraintLeft_toLeftOf="@id/levo"
+        app:layout_constraintRight_toRightOf="@id/desno"
+        app:layout_constraintTop_toBottomOf="@+id/Date"
         tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/description"
-        android:layout_width="192dp"
+        android:layout_width="0dp"
         android:layout_height="126dp"
-        android:layout_marginEnd="104dp"
-        android:layout_marginBottom="14dp"
         android:ems="10"
         android:hint="Dodaj opis"
         android:inputType="text"
+        android:background="@drawable/zaedit"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/picture"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Picture"
+        android:textColor="@color/bijela"
+        android:textColorHint="#70FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/Location"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="@id/levo"
+        app:layout_constraintRight_toRightOf="@id/desno"
+        app:layout_constraintTop_toBottomOf="@+id/barproba"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/add_event"
         android:layout_width="200dp"
         android:layout_height="100dp"
-        android:layout_marginEnd="104dp"
         android:text="DODAJ DOGAĐAJ"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/picture"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintBottom_toTopOf="@+id/picture"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="@id/levo"
+        app:layout_constraintRight_toRightOf="@id/desno"
+        app:layout_constraintTop_toBottomOf="@+id/Picture"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
