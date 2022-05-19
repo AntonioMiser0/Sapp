@@ -44,7 +44,7 @@ public class swp extends AppCompatActivity implements View.OnClickListener{
         lista.setOnClickListener(swp.this);
         rowItems = new ArrayList<Event>();
         mAuth=FirebaseAuth.getInstance();
-        currentUser=mAuth.getCurrentUser().getUid().toString();
+        currentUser=mAuth.getCurrentUser().getUid();
         arrayAdapter = new arrayAdapter(this, R.layout.details, rowItems );
         addEvent();
         SwipeFlingAdapterView flingContainer=(SwipeFlingAdapterView) findViewById(R.id.frame);
@@ -78,6 +78,7 @@ public class swp extends AppCompatActivity implements View.OnClickListener{
                 //arrayAdapter.notifyDataSetChanged();
                 //Log.d("LIST", "notified");
                 //i++;
+
             }
 
             @Override
@@ -104,16 +105,19 @@ public class swp extends AppCompatActivity implements View.OnClickListener{
             eventsDb.addChildEventListener(new ChildEventListener() {
                 @Override
                 public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                    if(snapshot.child("dogadaj").getValue().equals(true)){
-                        Event Item=new Event(snapshot.child("Event").child("description").getValue().toString(),
+                    boolean lazes=(snapshot.getKey().toString()).equals(currentUser);
+                    if(snapshot.child("dogadaj").getValue().equals(true)&&(!lazes)){
+                        Event Item = new Event(snapshot.getKey(), snapshot.child("Event").child("description").getValue().toString(),
                                 snapshot.child("Event").child("location").getValue().toString(),
                                 snapshot.child("Event").child("category").getValue().toString()
-                                ,snapshot.child("Event").child("date").getValue().toString()
-                                ,snapshot.child("Event").child("pictureUrl").getValue().toString()
-                                ,snapshot.child("fullName").getValue().toString(),snapshot.child("age").getValue().toString());
+                                , snapshot.child("Event").child("date").getValue().toString()
+                                , snapshot.child("Event").child("pictureUrl").getValue().toString()
+                                , snapshot.child("fullName").getValue().toString(), snapshot.child("age").getValue().toString());
                         rowItems.add(Item);
                         arrayAdapter.notifyDataSetChanged();
+                        Toast.makeText(swp.this, snapshot.getKey().toString(),Toast.LENGTH_SHORT).show();
                     }
+
 
                 }
                 @Override

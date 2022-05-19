@@ -7,7 +7,7 @@ import java.sql.Date;
 
 public class Event {
 
-    public String description,location,category,date,fullName,age,imageUrl;
+    public String description,location,category,date,fullName,age,imageUrl,userid;
     Event(String desc,String loc,String dat){
         description=desc;
         location=loc;
@@ -34,7 +34,7 @@ public class Event {
         date=dat;
         this.imageUrl=imageUrl;
     }
-    Event(String desc,String loc, String cat,String dat,String imageUrl,String ime,String age){
+    Event(String user,String desc,String loc, String cat,String dat,String imageUrl,String ime,String age){
         description=desc;
         location=loc;
         category=cat;
@@ -42,6 +42,7 @@ public class Event {
         fullName=ime;
         this.imageUrl=imageUrl;
         this.age=age;
+        userid=user;
     }
 
 }

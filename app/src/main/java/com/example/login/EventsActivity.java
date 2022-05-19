@@ -83,11 +83,11 @@ public class EventsActivity extends AppCompatActivity implements AdapterView.OnI
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.Category, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-
+        spinner.setOnItemSelectedListener(this);
 Picture.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
-        Intent intent=new Intent(Intent.ACTION_GET_CONTENT);
+        Intent intent=new Intent(Intent.ACTION_PICK);
         intent.setType("image/*");
         startForResult.launch(intent);
     }
@@ -95,20 +95,12 @@ Picture.setOnClickListener(new View.OnClickListener() {
 addEvent.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
-        getEventInfo();
+        setEventInfo();
     }
 });
     }
-    @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        selectedCategory=(String)adapterView.getItemAtPosition(i);
-        Toast.makeText(EventsActivity.this,"neka",Toast.LENGTH_SHORT).show();
-    }
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
-        selectedCategory="Zabava";
-    }
-    private void getEventInfo() {
+
+    private void setEventInfo() {
         if(resultUri!=null){
             StorageReference filepath= FirebaseStorage.getInstance().getReference().child("images").child(mAuth.getCurrentUser().getUid());
             Bitmap bitmap=null;
@@ -121,32 +113,34 @@ addEvent.setOnClickListener(new View.OnClickListener() {
             bitmap.compress(Bitmap.CompressFormat.JPEG,20,baos);
             byte[] data= baos.toByteArray();
             UploadTask uploadTask=filepath.putBytes(data);
-            uploadTask.addOnFailureListener(new OnFailureListener() {@Override
-            public void onFailure(@NonNull Exception e) {
-                finish();
-            }
-            });
+            uploadTask.addOnFailureListener(e -> finish());
             uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    String downloadUrl=taskSnapshot.getMetadata().getReference().getDownloadUrl().toString();
+                    filepath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            Map newImage = new HashMap();
+                            newImage.put("pictureUrl", uri.toString());
+                            EventsDb.updateChildren(newImage);
 
-                    Map eventInfo=new HashMap();
-                    eventInfo.put("imageUrl",downloadUrl);
-                    imageUrl=downloadUrl;
-
-                    return;
+                            finish();
+                            return;
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception exception) {
+                            imageUrl="https://firebasestorage.googleapis.com/v0/b/auth-23952.appspot.com/o/pexels-wendy-wei-1190298.jpg?alt=media&token=fda5cba3-3001-4153-9ede-1ec59881fc1f";
+                            finish();
+                            return;
+                        }
+                    });
                 }
             });
 
-        }else {
-            imageUrl="https://firebasestorage.googleapis.com/v0/b/auth-23952.appspot.com/o/pexels-wendy-wei-1190298.jpg?alt=media&token=fda5cba3-3001-4153-9ede-1ec59881fc1f";
-
-        }
-
         desc=description.getText().toString();
-        loc=location.getText().toString();
-        datum=date.getText().toString();
+        loc=Location.getText().toString();
+        datum=Date.getText().toString();
         Map eventInfo=new HashMap();
         eventInfo.put("description",desc);
         eventInfo.put("location",loc);
@@ -156,8 +150,16 @@ addEvent.setOnClickListener(new View.OnClickListener() {
         EventsDb.updateChildren(eventInfo);
         dogadajDb.setValue(true);
 
-finish();
-        }
+
+        }}
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        selectedCategory=(String)adapterView.getItemAtPosition(i);
+    }
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+        selectedCategory="Zabava";
+    }
 
 
 }
