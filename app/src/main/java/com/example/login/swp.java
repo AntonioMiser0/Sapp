@@ -104,8 +104,12 @@ public class swp extends AppCompatActivity implements View.OnClickListener{
             eventsDb.addChildEventListener(new ChildEventListener() {
                 @Override
                 public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                    if(snapshot.child("dogadaj").equals(true)){
-                        Event Item=new Event(snapshot.child("Event").child("description").getValue().toString(),snapshot.child("Event").child("location").getValue().toString(),snapshot.child("Event").child("date").getValue().toString(),snapshot.child("Event").child("pictureUrl").getValue().toString());
+                    if(snapshot.child("dogadaj").getValue().equals(true)){
+                        Event Item=new Event(snapshot.child("Event").child("description").getValue().toString(),
+                                snapshot.child("Event").child("location").getValue().toString()
+                                ,snapshot.child("Event").child("date").getValue().toString()
+                                ,snapshot.child("Event").child("pictureUrl").getValue().toString()
+                                ,snapshot.child("fullName").getValue().toString(),snapshot.child("age").getValue().toString());
                         rowItems.add(Item);
                         arrayAdapter.notifyDataSetChanged();
                     }
