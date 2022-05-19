@@ -23,16 +23,14 @@ public class arrayAdapter extends ArrayAdapter<Event>
         Event card_item=getItem(position);
         if(convertView==null)
         convertView= LayoutInflater.from(getContext()).inflate(R.layout.details,parent,false);
-    TextView name=(TextView) convertView.findViewById(R.id.swpcards);
+        TextView name=(TextView) convertView.findViewById(R.id.ime);
         TextView desc=(TextView) convertView.findViewById(R.id.swpcards1);
-        TextView age=(TextView) convertView.findViewById(R.id.swpcards2);
-        TextView loc=(TextView) convertView.findViewById(R.id.swpcards3);
-        TextView date=(TextView) convertView.findViewById(R.id.swpcards4);
+        TextView age=(TextView) convertView.findViewById(R.id.godine);
         ImageView image=(ImageView) convertView.findViewById(R.id.event_pic);
 
     name.setText(card_item.fullName);
+    age.setText(card_item.age);
     desc.setText(card_item.description);
-    date.setText(card_item.date);
     Glide.with(getContext()).load(card_item.imageUrl).centerCrop().into(image);
     return convertView;
     }
