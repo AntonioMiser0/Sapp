@@ -69,7 +69,6 @@ public class EventsActivity extends AppCompatActivity implements AdapterView.OnI
         setContentView(R.layout.activity_events);
         description=(findViewById(R.id.description));
         date=(findViewById(R.id.date));
-        location= (findViewById(R.id.location));
         category= (findViewById(R.id.Category));
         slika=(findViewById(R.id.picture));
         addEvent=(findViewById(R.id.add_event));
