@@ -15,11 +15,14 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -39,17 +42,18 @@ import java.sql.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class EventsActivity extends AppCompatActivity {
+public class EventsActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private FirebaseAuth mAuth;
     private EditText description, date,location;
     private TextView Description,Date,Location,Picture,Category,Naslov;
     private ImageView slika;
     private Spinner category;
     private Button addEvent;
-    public DatabaseReference EventsDb;
+    public DatabaseReference EventsDb,dogadajDb;
     private Uri resultUri;
     private String desc,loc;
-    private java.sql.Date datum;
+    private String datum,imageUrl;
+    String selectedCategory;
     ActivityResultLauncher<Intent> startForResult=registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
         @Override
         public void onActivityResult(ActivityResult result) {
@@ -63,20 +67,24 @@ public class EventsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_events);
-
-        description=(EditText) (findViewById(R.id.description));
-        date=(EditText) (findViewById(R.id.date));
-        location=(EditText) (findViewById(R.id.location));
-        category=(Spinner) (findViewById(R.id.Category));
-        slika=(ImageView)(findViewById(R.id.picture));
-        addEvent=(Button)(findViewById(R.id.add_event));
-        Naslov=(TextView) (findViewById(R.id.banner_event));
-        Date=(TextView) (findViewById(R.id.Date));
-        Location=(TextView) (findViewById(R.id.Location));
-        Picture =(TextView) (findViewById(R.id.Picture));
+        description=(findViewById(R.id.description));
+        date=(findViewById(R.id.date));
+        location= (findViewById(R.id.location));
+        category= (findViewById(R.id.Category));
+        slika=(findViewById(R.id.picture));
+        addEvent=(findViewById(R.id.add_event));
+        Naslov= (findViewById(R.id.banner_event));
+        Date= (findViewById(R.id.Date));
+        Location= (findViewById(R.id.Location));
+        Picture = (findViewById(R.id.Picture));
         mAuth = FirebaseAuth.getInstance();
-        EventsDb= FirebaseDatabase.getInstance().getReference().child("Users").child(mAuth.getCurrentUser().getUid().toString()).child("Events");
+        dogadajDb=FirebaseDatabase.getInstance().getReference().child("Users").child(mAuth.getCurrentUser().getUid()).child("dogadaj");
+        EventsDb= FirebaseDatabase.getInstance().getReference().child("Users").child(mAuth.getCurrentUser().getUid()).child("Event");
         Map eventInfo =new HashMap<>();
+        Spinner spinner = (Spinner) findViewById(R.id.Category);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.Category, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
 
 Picture.setOnClickListener(new View.OnClickListener() {
     @Override
@@ -92,22 +100,16 @@ addEvent.setOnClickListener(new View.OnClickListener() {
         getEventInfo();
     }
 });
+    }    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        selectedCategory=(String)adapterView.getItemAtPosition(i);
+        Toast.makeText(EventsActivity.this,"neka",Toast.LENGTH_SHORT).show();
     }
-
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+        selectedCategory="Zabava";
+    }
     private void getEventInfo() {
-        desc=description.getText().toString();
-        loc=location.getText().toString();
-        datum=(Date)date.getText();
-
-        Map eventInfo=new HashMap();
-        eventInfo.put("description",desc);
-        eventInfo.put("location",loc);
-        eventInfo.put("date",datum);
-        EventsDb.updateChildren(eventInfo);
-        EventsDb.child("description").setValue(desc);
-        EventsDb.child("location").setValue(loc);
-        EventsDb.child("date").setValue(datum);
-
         if(resultUri!=null){
             StorageReference filepath= FirebaseStorage.getInstance().getReference().child("images").child(mAuth.getCurrentUser().getUid());
             Bitmap bitmap=null;
@@ -122,8 +124,8 @@ addEvent.setOnClickListener(new View.OnClickListener() {
             UploadTask uploadTask=filepath.putBytes(data);
             uploadTask.addOnFailureListener(new OnFailureListener() {@Override
             public void onFailure(@NonNull Exception e) {
-                    finish();
-                }
+                finish();
+            }
             });
             uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
@@ -132,17 +134,31 @@ addEvent.setOnClickListener(new View.OnClickListener() {
 
                     Map eventInfo=new HashMap();
                     eventInfo.put("imageUrl",downloadUrl);
-                    EventsDb.updateChildren(eventInfo);
-                    EventsDb.child("pictureUrl").setValue(downloadUrl);
-
-                    finish();
+                    imageUrl=downloadUrl;
 
                     return;
                 }
             });
 
         }else {
-        finish();
+            imageUrl="https://firebasestorage.googleapis.com/v0/b/auth-23952.appspot.com/o/pexels-wendy-wei-1190298.jpg?alt=media&token=fda5cba3-3001-4153-9ede-1ec59881fc1f";
+
         }
+
+        desc=description.getText().toString();
+        loc=location.getText().toString();
+        datum=date.getText().toString();
+        Map eventInfo=new HashMap();
+        eventInfo.put("description",desc);
+        eventInfo.put("location",loc);
+        eventInfo.put("date",datum);
+        eventInfo.put("category",selectedCategory);
+        eventInfo.put("pictureUrl",imageUrl);
+        EventsDb.updateChildren(eventInfo);
+        dogadajDb.setValue(true);
+
+finish();
         }
-    }
+
+
+}
