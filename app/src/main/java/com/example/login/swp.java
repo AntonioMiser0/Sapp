@@ -106,7 +106,8 @@ public class swp extends AppCompatActivity implements View.OnClickListener{
                 public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                     if(snapshot.child("dogadaj").getValue().equals(true)){
                         Event Item=new Event(snapshot.child("Event").child("description").getValue().toString(),
-                                snapshot.child("Event").child("location").getValue().toString()
+                                snapshot.child("Event").child("location").getValue().toString(),
+                                snapshot.child("Event").child("category").getValue().toString()
                                 ,snapshot.child("Event").child("date").getValue().toString()
                                 ,snapshot.child("Event").child("pictureUrl").getValue().toString()
                                 ,snapshot.child("fullName").getValue().toString(),snapshot.child("age").getValue().toString());

@@ -26,11 +26,17 @@ public class arrayAdapter extends ArrayAdapter<Event>
         TextView name=(TextView) convertView.findViewById(R.id.ime);
         TextView desc=(TextView) convertView.findViewById(R.id.swpcards1);
         TextView age=(TextView) convertView.findViewById(R.id.godine);
+        TextView loc=(TextView) convertView.findViewById(R.id.lokacija);
+        TextView dat=(TextView) convertView.findViewById(R.id.vrijeme);
+        TextView kat=(TextView) convertView.findViewById(R.id.kategorije);
         ImageView image=(ImageView) convertView.findViewById(R.id.event_pic);
 
     name.setText(card_item.fullName);
     age.setText(card_item.age);
     desc.setText(card_item.description);
+    loc.setText(card_item.location);
+    dat.setText(card_item.date);
+    kat.setText(card_item.category);
     Glide.with(getContext()).load(card_item.imageUrl).centerCrop().into(image);
     return convertView;
     }

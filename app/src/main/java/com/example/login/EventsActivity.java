@@ -98,7 +98,8 @@ addEvent.setOnClickListener(new View.OnClickListener() {
         getEventInfo();
     }
 });
-    }    @Override
+    }
+    @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         selectedCategory=(String)adapterView.getItemAtPosition(i);
         Toast.makeText(EventsActivity.this,"neka",Toast.LENGTH_SHORT).show();

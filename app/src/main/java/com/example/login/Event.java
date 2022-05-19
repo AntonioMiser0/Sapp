@@ -34,13 +34,14 @@ public class Event {
         date=dat;
         this.imageUrl=imageUrl;
     }
-    /*Event(String desc,String loc, String cat,String dat,String ime,String age){
+    Event(String desc,String loc, String cat,String dat,String imageUrl,String ime,String age){
         description=desc;
         location=loc;
         category=cat;
         date=dat;
         fullName=ime;
+        this.imageUrl=imageUrl;
         this.age=age;
-    }*/
+    }
 
 }
