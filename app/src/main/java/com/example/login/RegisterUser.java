@@ -59,7 +59,6 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         String password=editTextPassword.getText().toString().trim();
         String fullName=editTextFullname.getText().toString().trim();
         String age=editTextAge.getText().toString().trim();
-
         if(fullName.isEmpty()){
             editTextFullname.setError("Full name is requried");
             editTextFullname.requestFocus();
@@ -97,14 +96,14 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                         if(task.isSuccessful()){
-                            User user=new User(fullName,age,email);
-
+                            User user=new User(fullName,age,email,false);
                             FirebaseDatabase.getInstance().getReference("Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){
+
                                         Toast.makeText(RegisterUser.this,"user has been registered successfully!",Toast.LENGTH_LONG).show();
                                     }else{
                                         Toast.makeText(RegisterUser.this,"Failed to register! Try again!",Toast.LENGTH_LONG).show();

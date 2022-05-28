@@ -71,7 +71,6 @@ public class EventsActivity extends AppCompatActivity implements AdapterView.OnI
         category= (findViewById(R.id.Category));
         slika=(findViewById(R.id.picture));
         addEvent=(findViewById(R.id.add_event));
-        Naslov= (findViewById(R.id.banner_event));
         Date= (findViewById(R.id.Date));
         Location= (findViewById(R.id.Location));
         Picture = (findViewById(R.id.Picture));
@@ -146,10 +145,9 @@ addEvent.setOnClickListener(new View.OnClickListener() {
         eventInfo.put("location",loc);
         eventInfo.put("date",datum);
         eventInfo.put("category",selectedCategory);
-        eventInfo.put("pictureUrl",imageUrl);
         EventsDb.updateChildren(eventInfo);
         dogadajDb.setValue(true);
-
+    finish();
 
         }}
     @Override

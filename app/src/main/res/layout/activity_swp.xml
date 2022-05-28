@@ -3,15 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/tplava" >
 
 
     <com.lorentzos.flingswipe.SwipeFlingAdapterView
         android:id="@+id/frame"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:translationZ="-1dp"
         android:background="#ffeee9e2"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/gore"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -19,133 +21,85 @@
         tools:context=".swp" />
 
 
-    <ImageView
-        android:id="@+id/bar"
-        android:layout_width="557dp"
-        android:layout_height="301dp"
-        app:layout_constraintBottom_toBottomOf="@id/guideline3"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/bar" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.18" />
+
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.01" />
+        app:layout_constraintGuide_percent="0.9" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.12" />
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/lp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.025" />
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.225" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/lk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.275" />
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/dk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.475" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/lpoc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.525" />
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/dpoc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.725" />
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/ll"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.775" />
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/dl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.975" />
-
-
-    <Button
-        android:id="@+id/profil"
+        app:layout_constraintGuide_percent="0.07" />
+    <LinearLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_margin="5dp"
-        android:background="@drawable/profil"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/guideline1"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="@id/lp"
-        app:layout_constraintRight_toRightOf="@id/dp"
+        >
+        <ImageButton
+            android:background="?android:attr/selectableItemBackground"
+            android:id="@+id/profil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerInside"
+            android:padding="5dp"
+            android:adjustViewBounds="true"
+            app:srcCompat="@drawable/profil" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
         app:layout_constraintTop_toTopOf="@id/gore"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
 
-    <Button
-        android:id="@+id/kategorije"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/kategorije"
-        app:layout_constraintBottom_toBottomOf="@id/guideline1"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="@id/lk"
-        android:layout_margin="5dp"
-        app:layout_constraintRight_toRightOf="@id/dk"
-        app:layout_constraintTop_toTopOf="@id/gore" />
-    <Button
-        android:id="@+id/pocetna"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/pocetna"
-        app:layout_constraintBottom_toBottomOf="@id/guideline1"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="@id/lpoc"
-        android:layout_margin="5dp"
-        app:layout_constraintRight_toRightOf="@id/dpoc"
-        app:layout_constraintTop_toTopOf="@id/gore" />
-    <Button
-        android:id="@+id/lista"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/lista"
-        app:layout_constraintBottom_toBottomOf="@id/guideline1"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="@id/ll"
-        android:layout_margin="5dp"
-        app:layout_constraintRight_toRightOf="@id/dl"
-        app:layout_constraintTop_toTopOf="@id/gore" />
+
+
+        <ImageButton
+            android:id="@+id/kategorije"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:adjustViewBounds="true"
+            android:padding="10dp"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/kategorije" />
+        <ImageButton
+            android:background="?android:attr/selectableItemBackground"
+            android:id="@+id/pocetna"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:padding="10dp"
+            app:srcCompat="@drawable/pocetna" />
+        <ImageButton
+            android:background="?android:attr/selectableItemBackground"
+            android:id="@+id/lista"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:padding="10dp"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/lista" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

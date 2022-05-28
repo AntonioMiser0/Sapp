@@ -63,12 +63,12 @@ public class swp extends AppCompatActivity implements View.OnClickListener{
                 //Do something on the left!
                 //You also have access to the original object.
                 //If you want to use it just cast it (String) dataObject
-                Toast.makeText(swp.this, "Left!",Toast.LENGTH_SHORT).show();
+                Toast.makeText(swp.this, "Removed",Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onRightCardExit(Object dataObject) {
-                Toast.makeText(swp.this, "Right!",Toast.LENGTH_SHORT).show();
+                Toast.makeText(swp.this, "Added",Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -115,7 +115,6 @@ public class swp extends AppCompatActivity implements View.OnClickListener{
                                 , snapshot.child("fullName").getValue().toString(), snapshot.child("age").getValue().toString());
                         rowItems.add(Item);
                         arrayAdapter.notifyDataSetChanged();
-                        Toast.makeText(swp.this, snapshot.getKey().toString(),Toast.LENGTH_SHORT).show();
                     }
 
 

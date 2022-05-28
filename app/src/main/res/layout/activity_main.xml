@@ -1,58 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="445dp"
-    android:layout_height="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@color/tplava">
 
     <ImageView
         android:id="@+id/back"
-        android:layout_width="500dp"
-        android:layout_height="1100dp"
-        android:layout_marginLeft="-31dp"
-        android:layout_marginTop="-263dp"
-        android:src="@drawable/backlogin" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/backlogin"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="450dp"
-        android:layout_height="450dp"
-        android:layout_marginLeft="-31dp"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/logotext" />
+        android:layout_width="300dp"
+        android:layout_height="400dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/logotext"
+        app:layout_constraintBottom_toBottomOf="@id/back"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/login"
-        android:layout_width="180dp"
-        android:layout_height="80dp"
-        android:layout_below="@+id/back"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="-150dp"
-        android:backgroundTint="@color/svjezelena"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shadow"
         android:fontFamily="@font/regular"
         android:text="Login"
         android:textColor="@color/bijela"
         android:textSize="26sp"
-        app:strokeColor="@color/siva"
-        app:strokeWidth="1dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/back" />
 
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/register"
-        android:layout_width="180dp"
-        android:layout_height="80dp"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:layout_below="@+id/back"
-        android:layout_marginTop="-150dp"
-        android:layout_toRightOf="@+id/login"
-        android:backgroundTint="@color/svjplava"
+        android:background="@drawable/shadow"
         android:fontFamily="@font/regular"
         android:text="register"
         android:textColor="@color/bijela"
         android:textSize="26sp"
-        app:strokeColor="@color/siva"
-        app:strokeWidth="1dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login"
+        app:layout_constraintVertical_bias="0.191" />
+    " />
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 

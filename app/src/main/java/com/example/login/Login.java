@@ -17,6 +17,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
     private TextView register, forgotPassword;
@@ -109,6 +111,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
                     }else{
                         user.sendEmailVerification();
+                        DatabaseReference dogadajDb=FirebaseDatabase.getInstance().getReference().child("Users").child(mAuth.getCurrentUser().getUid()).child("dogadaj");
+                        dogadajDb.setValue(false);
                         Toast.makeText(Login.this, "Check your email to verify your account", Toast.LENGTH_SHORT).show();
                     }
 
