@@ -1,9 +1,6 @@
 package com.example.login;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageButton;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -13,18 +10,17 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.example.login.databinding.ActivityFragBinding;
+import com.example.login.databinding.ActivityNavBinding;
 
-public class frag extends AppCompatActivity implements View.OnClickListener {
+public class nav extends AppCompatActivity {
 
-    private ActivityFragBinding binding;
-    ImageButton profil;
+    private ActivityNavBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        profil= findViewById(R.id.profil);
-        profil.setOnClickListener(frag.this);
-        binding = ActivityFragBinding.inflate(getLayoutInflater());
+
+        binding = ActivityNavBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
@@ -33,17 +29,9 @@ public class frag extends AppCompatActivity implements View.OnClickListener {
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
                 .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_frag);
+        NavController navController = Navigation.findNavController(this, R.id.fragmentContainerView);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
     }
 
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.profil:
-                startActivity(new Intent(frag.this, Profil.class));
-                break;
-        }
-    }
 }

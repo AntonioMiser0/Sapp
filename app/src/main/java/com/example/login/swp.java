@@ -6,14 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -33,18 +30,17 @@ public class swp extends Fragment {
     List<Event> rowItems;
     FirebaseAuth mAuth;
     String currentUser;
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater,@Nullable ViewGroup container,@Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
 
 
         rowItems = new ArrayList<Event>();
         mAuth=FirebaseAuth.getInstance();
         currentUser=mAuth.getCurrentUser().getUid();
-
+        View v=inflater.inflate(R.layout.activity_swp,container,false);
         arrayAdapter = new arrayAdapter(getActivity(), R.layout.details, rowItems );
         addEvent();
-        SwipeFlingAdapterView flingContainer=(SwipeFlingAdapterView) getActivity().findViewById(R.id.frame);
+        SwipeFlingAdapterView flingContainer= v.findViewById(R.id.frame);
         flingContainer.setAdapter(arrayAdapter);
         flingContainer.setFlingListener(new SwipeFlingAdapterView.onFlingListener() {
             @Override
@@ -60,12 +56,12 @@ public class swp extends Fragment {
                 //Do something on the left!
                 //You also have access to the original object.
                 //If you want to use it just cast it (String) dataObject
-                //Toast.makeText(getActivity(), "Removed",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Removed",Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onRightCardExit(Object dataObject) {
-                //Toast.makeText(getActivity(), "Added",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Added",Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -83,7 +79,7 @@ public class swp extends Fragment {
 
             }
         });
-        return inflater.inflate(R.layout.activity_swp,container,false);
+        return v;
     }
     private void addEvent() {
 
@@ -93,7 +89,7 @@ public class swp extends Fragment {
             eventsDb.addChildEventListener(new ChildEventListener() {
                 @Override
                 public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                    boolean lazes=(snapshot.getKey().toString()).equals(currentUser);
+                    boolean lazes=(snapshot.getKey()).equals(currentUser);
                     if(snapshot.child("dogadaj").getValue().equals(true)&&(!lazes)){
                         Event Item = new Event(snapshot.getKey(), snapshot.child("Event").child("description").getValue().toString(),
                                 snapshot.child("Event").child("location").getValue().toString(),
@@ -120,7 +116,7 @@ public class swp extends Fragment {
                 public void onCancelled(@NonNull DatabaseError error) {}
             });
     }
-    static void makeToast(Context ctx, String s){
-        Toast.makeText(ctx, s, Toast.LENGTH_SHORT).show();
-    }
+  //  static void makeToast(Context ctx, String s){
+ //       Toast.makeText(ctx, s, Toast.LENGTH_SHORT).show();
+//    }
 }

@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.example.login.ui.home.HomeFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -52,7 +53,7 @@ public class LoginOrRegister extends AppCompatActivity implements View.OnClickLi
                 break;
 
             case R.id.login:
-                startActivity(new Intent(LoginOrRegister.this, swp.class));
+                startActivity(new Intent(LoginOrRegister.this, nav.class));
         }
     }
 }
