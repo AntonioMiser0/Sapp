@@ -105,8 +105,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
                     if(user.isEmailVerified()){
                         //redirect to login page
-                        startActivity(new Intent(Login.this, swp.class));
-
+                        startActivity(new Intent(Login.this, nav.class));
+                        Toast.makeText(Login.this, "Uspjeh", Toast.LENGTH_SHORT).show();
 
 
                     }else{

@@ -1,15 +1,14 @@
 package com.example.login;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-import com.example.login.ui.home.HomeFragment;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -53,7 +52,7 @@ public class LoginOrRegister extends AppCompatActivity implements View.OnClickLi
                 break;
 
             case R.id.login:
-                startActivity(new Intent(LoginOrRegister.this, nav.class));
+                startActivity(new Intent(LoginOrRegister.this, Login.class));
         }
     }
 }
