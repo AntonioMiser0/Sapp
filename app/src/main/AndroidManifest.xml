@@ -10,10 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Login">
         <activity
-            android:name=".nav"
-            android:exported="false"
-            android:label="@string/title_activity_nav" />
-        <activity
             android:name=".Korisnik"
             android:exported="false" />
         <activity

@@ -3,14 +3,14 @@ package com.example.login;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,22 +25,29 @@ import com.lorentzos.flingswipe.SwipeFlingAdapterView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class swp extends Fragment {
+public class swp extends AppCompatActivity implements View.OnClickListener{
     private arrayAdapter arrayAdapter;
+    private Button profil;
+    private Button lista;
+
     List<Event> rowItems;
     FirebaseAuth mAuth;
     String currentUser;
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_swp);
 
-
+        profil=(Button) findViewById(R.id.profil);
+        profil.setOnClickListener(swp.this);
+        lista= findViewById(R.id.lista);
+        lista.setOnClickListener(swp.this);
         rowItems = new ArrayList<Event>();
         mAuth=FirebaseAuth.getInstance();
         currentUser=mAuth.getCurrentUser().getUid();
-        View v=inflater.inflate(R.layout.activity_swp,container,false);
-        arrayAdapter = new arrayAdapter(getActivity(), R.layout.details, rowItems );
+        arrayAdapter = new arrayAdapter(this, R.layout.details, rowItems );
         addEvent();
-        SwipeFlingAdapterView flingContainer= v.findViewById(R.id.frame);
+        SwipeFlingAdapterView flingContainer=(SwipeFlingAdapterView) findViewById(R.id.frame);
         flingContainer.setAdapter(arrayAdapter);
         flingContainer.setFlingListener(new SwipeFlingAdapterView.onFlingListener() {
             @Override
@@ -56,12 +63,12 @@ public class swp extends Fragment {
                 //Do something on the left!
                 //You also have access to the original object.
                 //If you want to use it just cast it (String) dataObject
-                Toast.makeText(getActivity(), "Removed",Toast.LENGTH_SHORT).show();
+                Toast.makeText(swp.this, "Removed",Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onRightCardExit(Object dataObject) {
-                Toast.makeText(getActivity(), "Added",Toast.LENGTH_SHORT).show();
+                Toast.makeText(swp.this, "Added",Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -79,7 +86,16 @@ public class swp extends Fragment {
 
             }
         });
-        return v;
+    }
+    @Override
+    public void onClick(View v){
+        switch (v.getId()){
+            case R.id.profil:
+                startActivity(new Intent(swp.this, Profil.class));
+                break;
+            case R.id.lista:
+                startActivity(new Intent(swp.this, Lista.class));
+        }
     }
     private void addEvent() {
 
@@ -89,7 +105,7 @@ public class swp extends Fragment {
             eventsDb.addChildEventListener(new ChildEventListener() {
                 @Override
                 public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                    boolean lazes=(snapshot.getKey()).equals(currentUser);
+                    boolean lazes=(snapshot.getKey().toString()).equals(currentUser);
                     if(snapshot.child("dogadaj").getValue().equals(true)&&(!lazes)){
                         Event Item = new Event(snapshot.getKey(), snapshot.child("Event").child("description").getValue().toString(),
                                 snapshot.child("Event").child("location").getValue().toString(),
@@ -116,7 +132,7 @@ public class swp extends Fragment {
                 public void onCancelled(@NonNull DatabaseError error) {}
             });
     }
-  //  static void makeToast(Context ctx, String s){
- //       Toast.makeText(ctx, s, Toast.LENGTH_SHORT).show();
-//    }
+    static void makeToast(Context ctx, String s){
+        Toast.makeText(ctx, s, Toast.LENGTH_SHORT).show();
+    }
 }
