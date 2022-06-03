@@ -13,10 +13,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
-        android:scaleType="fitXY"
+        android:scaleType="centerInside"
         android:src="@drawable/backlogin"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
 
     <ImageView
         android:id="@+id/logo"
@@ -45,7 +46,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/back" />
 
-    <Button
+    <ImageButton
         android:id="@+id/register"
         android:layout_width="300dp"
         android:layout_height="50dp"
@@ -61,7 +62,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login"
         app:layout_constraintVertical_bias="0.191" />
-    " />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/regular"
+        android:text="REGISTER"
+        android:textColor="@color/bijela"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="@+id/register"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/register"
+    />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

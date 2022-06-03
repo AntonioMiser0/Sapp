@@ -41,23 +41,26 @@
 
     <LinearLayout
         android:id="@+id/lock"
-        android:layout_marginTop="98dp"
-        android:layout_width="50dp"
+        android:layout_width="35dp"
+        android:layout_marginLeft="2dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="98dp"
         android:orientation="vertical"
         android:translationZ="1dp"
 
+        app:layout_constraintBottom_toBottomOf="@+id/tekstLayout"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="@id/dyn_layout">
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:adjustViewBounds="true"
-        android:scaleType="centerInside"
-        app:srcCompat="@drawable/lock" />
+        >
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/lock" />
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/tekstLayout"
         android:layout_width="match_parent"
@@ -66,36 +69,36 @@
         app:layout_constraintTop_toTopOf="@id/header">
 
 
-            <EditText
-                android:id="@+id/email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:alpha="0.8"
-                android:background="@color/siva"
-                android:hint="Email adress"
-                android:textColorHint="#D3D3D3"
-                android:inputType="textEmailAddress"
-                android:paddingLeft="60dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:textColor="@color/bijela"
-                android:textSize="25sp" />
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="0.8"
+            android:background="@color/siva"
+            android:hint="Email adress"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="60dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="@color/bijela"
+            android:textColorHint="#D3D3D3"
+            android:textSize="25sp" />
 
-            <EditText
-                android:id="@+id/password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:alpha="0.8"
-                android:layout_marginTop="50dp"
-                android:background="@color/siva"
-                android:hint="password"
-                android:textColorHint="#D3D3D3"
-                android:inputType="textPassword"
-                android:paddingLeft="60dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:textColor="@color/bijela"
-                android:textSize="25sp" />
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:alpha="0.8"
+            android:background="@color/siva"
+            android:hint="password"
+            android:inputType="textPassword"
+            android:paddingLeft="60dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="@color/bijela"
+            android:textColorHint="#D3D3D3"
+            android:textSize="25sp" />
     </LinearLayout>
 
     <LinearLayout
