@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Login">
         <activity
+            android:name=".frag"
+            android:exported="false"
+            android:label="@string/title_activity_frag" />
+        <activity
             android:name=".Korisnik"
             android:exported="false" />
         <activity
