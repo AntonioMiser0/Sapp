@@ -15,19 +15,18 @@ private ImageButton button;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profil);
-        uredivanje= findViewById(R.id.uredivanje);
-        uredivanje.setOnClickListener(Profil.this);
-        button= findViewById(R.id.imageButton);
-        button.setOnClickListener(Profil.this);
-
+        postavke= findViewById(R.id.postavke);
+        postavke.setOnClickListener(this);
+        natrag=findViewById(R.id.natrag);
+        natrag.setOnClickListener(this);
 
     }
     public void onClick(View v){
         switch (v.getId()) {
             case R.id.uredivanje:
-                startActivity(new Intent(Profil.this, Uredivanje.class));
+               startActivity(new Intent(Profil.this, Uredivanje.class));
                 break;
-            case R.id.imageButton:
+            case R.id.natrag:
                 startActivity(new Intent(Profil.this, swp.class));
                 break;
 

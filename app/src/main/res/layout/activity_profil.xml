@@ -46,30 +46,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.58" />
-
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/register"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:background="@drawable/shadow"
-        android:fontFamily="@font/regular"
-        android:text="Profilna"
-        android:textColor="@color/bijela"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/gumbg"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/backProfil"
-        app:shapeAppearanceOverlay="@style/Circular"
-        app:strokeColor="@color/siva"
-        app:strokeWidth="4dp" />
+        app:layout_constraintGuide_percent="0.8" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="230dp"
+        android:layout_marginBottom="200dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -146,6 +130,12 @@
         app:layout_constraintBottom_toTopOf="@+id/gore"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="-10dp"
+        android:scaleType="centerInside"
+
+        android:layout_marginRight="350dp"
+        android:background="?android:attr/selectableItemBackground"
         app:srcCompat="@drawable/strelica" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
