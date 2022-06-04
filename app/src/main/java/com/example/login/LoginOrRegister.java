@@ -53,7 +53,7 @@ public class LoginOrRegister extends AppCompatActivity implements View.OnClickLi
                 break;
 
             case R.id.login:
-                startActivity(new Intent(LoginOrRegister.this, nav.class));
+                startActivity(new Intent(LoginOrRegister.this, swp.class));
         }
     }
 }
