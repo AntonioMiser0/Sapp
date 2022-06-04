@@ -19,7 +19,7 @@
     <LinearLayout
         android:id="@+id/dyn_layout"
         android:layout_marginTop="15dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="5dp"
         android:layout_width="35dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -41,11 +41,13 @@
 
     <LinearLayout
         android:id="@+id/lock"
-        android:layout_width="50dp"
+        android:layout_width="35dp"
+        android:layout_marginLeft="2dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="98dp"
         android:orientation="vertical"
         android:translationZ="1dp"
-        android:paddingBottom="9dp"
+
         app:layout_constraintBottom_toBottomOf="@+id/tekstLayout"
         app:layout_constraintLeft_toLeftOf="parent"
         >
@@ -72,7 +74,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:alpha="0.8"
-            android:background="@drawable/zaedit"
+            android:background="@color/siva"
             android:hint="Email adress"
             android:inputType="textEmailAddress"
             android:paddingLeft="60dp"
@@ -88,7 +90,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:alpha="0.8"
-            android:background="@drawable/zaedit"
+            android:background="@color/siva"
             android:hint="password"
             android:inputType="textPassword"
             android:paddingLeft="60dp"
@@ -104,12 +106,12 @@
         android:id="@+id/signIn"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="35dp"
         android:background="@drawable/shadow"
         android:text="Login"
+        android:fontFamily="@font/regular"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tekstLayout" />
