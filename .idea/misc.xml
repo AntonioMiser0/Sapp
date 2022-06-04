@@ -3,9 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_korisnik.xml" value="0.72" />
+        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_lista.xml" value="0.12141941000427534" />
         <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_login.xml" value="0.17089755213055305" />
         <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_main.xml" value="0.20989583333333334" />
         <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_profil.xml" value="0.18084651560495937" />
+        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_profile.xml" value="0.12141941000427534" />
+        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_register_user.xml" value="0.12141941000427534" />
+        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_splash.xml" value="0.12141941000427534" />
+        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_swp.xml" value="0.152" />
+        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_uredivanje.xml" value="0.12141941000427534" />
+        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/details.xml" value="0.12141941000427534" />
         <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/item.xml" value="0.1" />
       </map>
     </option>
