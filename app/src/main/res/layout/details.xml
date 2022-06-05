@@ -2,44 +2,45 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#FFF"
+    android:background="@drawable/zaedit"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
     <LinearLayout
-        android:id="@+id/dyn_layout"
+        android:id="@+id/imeLayout"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/Kat"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="@id/imeGuide"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintTop_toTopOf="@id/sena">
+
         <TextView
-            android:layout_marginLeft="10dp"
             android:id="@+id/ime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Andrija"
-            android:textSize="40sp"
+            android:layout_marginLeft="10dp"
             android:fontFamily="@font/bold"
+            android:text="Andrija"
             android:textColor="@color/bijela"
-            />
+            android:textSize="40sp" />
+
         <TextView
             android:id="@+id/godine"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/light"
-            android:text="24"
             android:paddingStart="20dp"
+            android:text="24"
             android:textColor="@color/bijela"
-            android:textSize="30sp"
-            />
+            android:textSize="30sp" />
 
     </LinearLayout>
 
     <ImageView
+        android:id="@+id/imageView5"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:alpha="0.6"
@@ -51,86 +52,70 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@id/sena" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/tplava"
-        app:layout_constraintBottom_toTopOf="@+id/swpcards1"
+
+    <LinearLayout
+        android:id="@+id/Kat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Kat" />
+        app:layout_constraintTop_toTopOf="@id/imeLayout">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/tplava"
-        app:layout_constraintBottom_toTopOf="@+id/layout"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/swpcards1" />
+        <TextView
+            android:id="@+id/kategorije"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:hint="Kategorije"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#D3D3D3"
+            android:textSize="25sp"
 
-  <LinearLayout
-      android:id="@+id/Kat"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:orientation="horizontal"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintLeft_toLeftOf="parent"
-  >
-      <TextView
-          android:id="@+id/kategorije"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:hint="Kategorije"
-          android:textColorHint="#D3D3D3"
-          android:layout_marginLeft="10dp"
-          android:textSize="25sp"
-          android:textColor="#000"
+            />
 
-          />
-      <TextView
-          android:id="@+id/swpcards"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:fontFamily="@font/regular"
-          android:textColorHint="#D3D3D3"
-          android:textSize="20sp"
-          android:textColor="#000"
-          android:layout_marginLeft="20dp"
-          />
+        <TextView
+            android:id="@+id/swpcards"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/regular"
+            android:textColor="#000"
+            android:textColorHint="#D3D3D3"
+            android:textSize="20sp" />
 
 
-
-  </LinearLayout>
+    </LinearLayout>
 
     <TextView
         android:id="@+id/swpcards1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Opis"
+        android:padding="10dp"
+        android:textColor="#B3FFFFFF"
         android:textColorHint="#D3D3D3"
-        android:textColor="#000"
         android:textSize="20sp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
         android:translationZ="1dp"
-        app:layout_constraintTop_toBottomOf="@+id/Kat"
-        app:layout_constraintLeft_toLeftOf="parent"/>
+        app:layout_constraintBottom_toTopOf="@+id/layout"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <LinearLayout
         android:id="@+id/layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="4dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
         android:orientation="horizontal"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/swpcards1">
+app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageView
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginLeft="1dp"
             android:maxWidth="40dp"
+            app:tint="#B3FFFFFF"
             android:src="@drawable/lokacija" />
 
         <TextView
@@ -140,7 +125,7 @@
             android:fontFamily="@font/regular"
             android:hint="Lokacija"
             android:textColorHint="#D3D3D3"
-            android:textColor="#000"
+            android:textColor="#B3FFFFFF"
             android:textSize="25sp" />
 
         <TextView
@@ -151,7 +136,7 @@
             android:fontFamily="@font/regular"
             android:hint="Datum"
             android:textColorHint="#D3D3D3"
-            android:textColor="#000"
+            android:textColor="#B3FFFFFF"
             android:textSize="25sp" />
 
 
@@ -159,35 +144,24 @@
 
     <ImageView
         android:id="@+id/event_pic"
-        android:layout_marginTop="10dp"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/bijela"
+        android:background="?android:attr/selectableItemBackground"
+        android:foreground="@drawable/imgshape"
         android:translationZ="-2dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/swpcards1"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gore"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.9" />
 
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/imeGuide"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.92" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/sena"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.88" />
+        app:layout_constraintGuide_percent="0.76" />
 </androidx.constraintlayout.widget.ConstraintLayout>

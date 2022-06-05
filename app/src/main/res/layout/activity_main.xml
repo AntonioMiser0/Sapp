@@ -35,7 +35,7 @@
         android:id="@+id/login"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/shadow"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -54,7 +54,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/login" />
 
-    <ImageButton
+    <Button
         android:id="@+id/register"
         android:layout_width="300dp"
         android:layout_height="50dp"
@@ -66,10 +66,10 @@
         android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login"
-        app:layout_constraintVertical_bias="0.191" />
+        app:layout_constraintVertical_bias="0.315" />
 
     <TextView
         android:layout_width="wrap_content"
