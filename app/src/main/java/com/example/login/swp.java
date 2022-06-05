@@ -3,17 +3,13 @@ package com.example.login;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ListView;
+
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -28,23 +24,32 @@ import com.lorentzos.flingswipe.SwipeFlingAdapterView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class swp extends Fragment {
+public class swp extends AppCompatActivity implements View.OnClickListener {
     private arrayAdapter arrayAdapter;
+    ImageButton profil;
+    ImageButton lista;
+    ImageButton kat;
     List<Event> rowItems;
     FirebaseAuth mAuth;
     String currentUser;
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater,@Nullable ViewGroup container,@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_swp);
 
+        profil= findViewById(R.id.profil);
+        profil.setOnClickListener(this);
+        lista= findViewById(R.id.lista);
+        lista.setOnClickListener(this);
+        kat= findViewById(R.id.kategorije);
+        kat.setOnClickListener(this);
 
         rowItems = new ArrayList<Event>();
         mAuth=FirebaseAuth.getInstance();
         currentUser=mAuth.getCurrentUser().getUid();
-
-        arrayAdapter = new arrayAdapter(getActivity(), R.layout.details, rowItems );
+        arrayAdapter = new arrayAdapter(swp.this, R.layout.details, rowItems );
         addEvent();
-        SwipeFlingAdapterView flingContainer=(SwipeFlingAdapterView) getActivity().findViewById(R.id.frame);
+        SwipeFlingAdapterView flingContainer= findViewById(R.id.frame);
         flingContainer.setAdapter(arrayAdapter);
         flingContainer.setFlingListener(new SwipeFlingAdapterView.onFlingListener() {
             @Override
@@ -60,12 +65,12 @@ public class swp extends Fragment {
                 //Do something on the left!
                 //You also have access to the original object.
                 //If you want to use it just cast it (String) dataObject
-                //Toast.makeText(getActivity(), "Removed",Toast.LENGTH_SHORT).show();
+                Toast.makeText(swp.this, "Removed",Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onRightCardExit(Object dataObject) {
-                //Toast.makeText(getActivity(), "Added",Toast.LENGTH_SHORT).show();
+                Toast.makeText(swp.this, "Added",Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -83,7 +88,22 @@ public class swp extends Fragment {
 
             }
         });
-        return inflater.inflate(R.layout.activity_swp,container,false);
+
+    }
+    public void onClick(View v){
+        switch (v.getId()) {
+            case R.id.profil:
+                startActivity(new Intent(swp.this, Profil.class));
+                break;
+            case R.id.lista:
+                startActivity(new Intent(swp.this, Lista.class));
+                break;
+          //  case R.id.kategorije:
+          //      startActivity(new Intent(swp.this, .class));
+          //      break;
+
+
+        }
     }
     private void addEvent() {
 
@@ -93,7 +113,7 @@ public class swp extends Fragment {
             eventsDb.addChildEventListener(new ChildEventListener() {
                 @Override
                 public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                    boolean lazes=(snapshot.getKey().toString()).equals(currentUser);
+                    boolean lazes=(snapshot.getKey()).equals(currentUser);
                     if(snapshot.child("dogadaj").getValue().equals(true)&&(!lazes)){
                         Event Item = new Event(snapshot.getKey(), snapshot.child("Event").child("description").getValue().toString(),
                                 snapshot.child("Event").child("location").getValue().toString(),
@@ -120,7 +140,7 @@ public class swp extends Fragment {
                 public void onCancelled(@NonNull DatabaseError error) {}
             });
     }
-    static void makeToast(Context ctx, String s){
-        Toast.makeText(ctx, s, Toast.LENGTH_SHORT).show();
-    }
+  //  static void makeToast(Context ctx, String s){
+ //       Toast.makeText(ctx, s, Toast.LENGTH_SHORT).show();
+//    }
 }

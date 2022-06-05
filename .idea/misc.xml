@@ -3,34 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/drawable/actionbar.xml" value="0.199" />
-        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/drawable/backgroundi.xml" value="0.2055" />
-        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/drawable/shadow.xml" value="0.1885" />
-        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/drawable/zaedit.xml" value="0.1595" />
-        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_events.xml" value="0.19581017528858485" />
-        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_frag.xml" value="0.2" />
-        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_fragment.xml" value="0.2" />
-        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_korisnik.xml" value="0.20863616930312098" />
-        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_lista.xml" value="0.264" />
-        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_login.xml" value="0.264" />
-        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_main.xml" value="0.3333333333333333" />
-        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_proba.xml" value="0.264" />
-        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_profil.xml" value="0.176" />
-        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_profile.xml" value="0.20863616930312098" />
-        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_register_user.xml" value="0.12868747327917915" />
-        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_splash.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_swipe.xml" value="0.2388888888888889" />
-        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_swp.xml" value="0.152" />
-        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_uredivanje.xml" value="0.2" />
-        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_znj.xml" value="0.2388888888888889" />
-        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/details.xml" value="0.264" />
-        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/fragment_dashboard.xml" value="0.1453612654980761" />
-        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/fragment_home.xml" value="0.1453612654980761" />
-        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/fragment_notifications.xml" value="0.1453612654980761" />
+        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/drawable/zaedit.xml" value="0.168" />
+        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_korisnik.xml" value="0.2" />
+        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_lista.xml" value="0.12141941000427534" />
+        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_login.xml" value="0.17089755213055305" />
+        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_main.xml" value="0.20989583333333334" />
+        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_profil.xml" value="0.4" />
+        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_profile.xml" value="0.12141941000427534" />
+        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_register_user.xml" value="0.12141941000427534" />
+        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_splash.xml" value="0.12141941000427534" />
+        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_swp.xml" value="0.2" />
+        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/activity_uredivanje.xml" value="0.12141941000427534" />
+        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/details.xml" value="0.12141941000427534" />
         <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/item.xml" value="0.1" />
-        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/layout/spinner_list.xml" value="0.12868747327917915" />
-        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1453612654980761" />
-        <entry key="..\:/Users/anton/AndroidStudioProjects/Sapp/app/src/main/res/menu/bottom_navigation.xml" value="0.19581017528858485" />
       </map>
     </option>
   </component>
