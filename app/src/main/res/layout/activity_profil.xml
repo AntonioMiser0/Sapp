@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.74" />
+        app:layout_constraintGuide_percent="0.78" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gore"
         android:layout_width="wrap_content"
@@ -34,30 +34,16 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.07" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gumbg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.43" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gumd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.8" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="200dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+        app:layout_constraintTop_toBottomOf="@+id/backProfil">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -72,7 +58,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="100dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="40dp"
             android:layout_marginRight="20dp"
             android:layout_weight="1"
             android:background="@drawable/tekstsapp"
@@ -83,43 +69,47 @@
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="200dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="@+id/gumd"
+        app:layout_constraintBottom_toBottomOf="@+id/backProfil"
+        app:layout_constraintHorizontal_bias="0.421"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/gumbg">
+        app:layout_constraintTop_toTopOf="@+id/gore"
+        app:layout_constraintVertical_bias="0.736">
 
         <ImageButton
             android:id="@+id/uredivanje"
-            android:layout_width="80dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="40dp"
             android:layout_weight="1"
-            android:layout_margin="25dp"
             android:adjustViewBounds="true"
             android:background="@drawable/postavke1"
             android:scaleType="centerCrop" />
 
+
+
         <ImageButton
             android:id="@+id/postavke"
-            android:layout_width="80dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="40dp"
             android:layout_weight="1"
-            android:layout_margin="25dp"
             android:background="@drawable/edit"
             android:scaleType="centerInside" />
     </LinearLayout>
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/gumd"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/gumbg"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout2"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout2"
         app:srcCompat="@drawable/podjela" />
-
     <ImageButton
         android:id="@+id/natrag"
         android:layout_width="50dp"

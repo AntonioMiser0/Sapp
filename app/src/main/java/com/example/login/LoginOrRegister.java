@@ -15,7 +15,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginOrRegister extends AppCompatActivity implements View.OnClickListener {
     private ImageButton login1;
-    private ImageButton register1;
+    private Button register1;
     private FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
