@@ -9,14 +9,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-import com.example.login.ui.home.HomeFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 
 public class LoginOrRegister extends AppCompatActivity implements View.OnClickListener {
     private ImageButton login1;
-    private Button register1;
+    private ImageButton register1;
     private FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +24,7 @@ public class LoginOrRegister extends AppCompatActivity implements View.OnClickLi
 
 
         login1 =  findViewById(R.id.login);
-        register1 = (Button) findViewById(R.id.register);
+        register1 =  findViewById(R.id.register);
         login1.setOnClickListener(LoginOrRegister.this);
         register1.setOnClickListener(this);
 
@@ -53,7 +52,7 @@ public class LoginOrRegister extends AppCompatActivity implements View.OnClickLi
                 break;
 
             case R.id.login:
-                startActivity(new Intent(LoginOrRegister.this, swp.class));
+                startActivity(new Intent(LoginOrRegister.this, Login.class));
         }
     }
 }

@@ -10,13 +10,13 @@ import android.widget.ImageButton;
 
 public class Profil extends AppCompatActivity implements View.OnClickListener {
 private ImageButton  uredivanje;
-private ImageButton button;
+private ImageButton natrag;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profil);
-        postavke= findViewById(R.id.postavke);
-        postavke.setOnClickListener(this);
+        uredivanje= findViewById(R.id.uredivanje);
+        uredivanje.setOnClickListener(this);
         natrag=findViewById(R.id.natrag);
         natrag.setOnClickListener(this);
 

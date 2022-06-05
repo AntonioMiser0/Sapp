@@ -121,18 +121,16 @@
         app:srcCompat="@drawable/podjela" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/natrag"
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:layout_constraintBottom_toTopOf="@+id/gore"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="-10dp"
         android:scaleType="centerInside"
         android:layout_marginRight="350dp"
         android:background="?android:attr/selectableItemBackground"
-        app:srcCompat="@drawable/strelica" />
+        android:src="@drawable/strelica" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
