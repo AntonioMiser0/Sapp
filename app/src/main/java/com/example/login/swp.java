@@ -1,16 +1,15 @@
 package com.example.login;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-
 import android.widget.ImageButton;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -32,11 +31,17 @@ public class swp extends AppCompatActivity implements View.OnClickListener {
     List<Event> rowItems;
     FirebaseAuth mAuth;
     String currentUser;
+    String filter;
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_swp);
-
+        Bundle extras = getIntent().getExtras();
+        filter="";
+        if (extras != null) {
+             filter= extras.getString("fil");
+            //The key argument here must match that used in the other activity
+        }
         profil= findViewById(R.id.profil);
         profil.setOnClickListener(this);
         lista= findViewById(R.id.lista);
@@ -98,9 +103,9 @@ public class swp extends AppCompatActivity implements View.OnClickListener {
             case R.id.lista:
                 startActivity(new Intent(swp.this, Lista.class));
                 break;
-          //  case R.id.kategorije:
-          //      startActivity(new Intent(swp.this, .class));
-          //      break;
+           case R.id.kategorije:
+              startActivity(new Intent(swp.this, Filter.class));
+               break;
 
 
         }
@@ -115,6 +120,7 @@ public class swp extends AppCompatActivity implements View.OnClickListener {
                 public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                     boolean lazes=(snapshot.getKey()).equals(currentUser);
                     if(snapshot.child("dogadaj").getValue().equals(true)&&(!lazes)){
+                        if(filter==""){
                         Event Item = new Event(snapshot.getKey(), snapshot.child("Event").child("description").getValue().toString(),
                                 snapshot.child("Event").child("location").getValue().toString(),
                                 snapshot.child("Event").child("category").getValue().toString()
@@ -123,6 +129,18 @@ public class swp extends AppCompatActivity implements View.OnClickListener {
                                 , snapshot.child("fullName").getValue().toString(), snapshot.child("age").getValue().toString());
                         rowItems.add(Item);
                         arrayAdapter.notifyDataSetChanged();
+                        }
+                        else if(snapshot.child(user.getUid()).child("Event").child("category").getValue().equals(filter)){
+                            Event Item = new Event(snapshot.getKey(), snapshot.child("Event").child("description").getValue().toString(),
+                                    snapshot.child("Event").child("location").getValue().toString(),
+                                    snapshot.child("Event").child("category").getValue().toString()
+                                    , snapshot.child("Event").child("date").getValue().toString()
+                                    , snapshot.child("Event").child("pictureUrl").getValue().toString()
+                                    , snapshot.child("fullName").getValue().toString(), snapshot.child("age").getValue().toString());
+                            rowItems.add(Item);
+                            arrayAdapter.notifyDataSetChanged();
+
+                        }
                     }
 
 

@@ -1,13 +1,12 @@
 package com.example.login;
 
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 
 public class Lista extends AppCompatActivity implements  View.OnClickListener {
@@ -23,9 +22,11 @@ public class Lista extends AppCompatActivity implements  View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.events:
-                startActivity(new Intent(this, Event.class));
+                startActivity(new Intent(this, EventsActivity.class));
                 break;
-
+            case R.id.pocetna:
+                startActivity(new Intent(this, swp.class));
+                break;
         }
     }
 }

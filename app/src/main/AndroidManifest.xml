@@ -9,60 +9,62 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Login">
-
+        <activity
+            android:name=".Filter"
+            android:exported="false" />
         <activity
             android:name=".Korisnik"
             android:exported="false" />
         <activity
             android:name=".Profil"
-            android:screenOrientation="sensorPortrait"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="sensorPortrait" />
         <activity
             android:name=".EventsActivity"
-            android:screenOrientation="sensorPortrait"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="sensorPortrait" />
         <activity
-            android:screenOrientation="sensorPortrait"
             android:name=".Uredivanje"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="sensorPortrait" />
         <activity
             android:name=".Lista"
-            android:screenOrientation="sensorPortrait"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="sensorPortrait" />
         <activity
             android:name=".LoginOrRegister"
-            android:screenOrientation="sensorPortrait"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="sensorPortrait" />
         <activity
             android:name=".Login"
-            android:screenOrientation="sensorPortrait"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="sensorPortrait" />
         <activity
             android:name=".swp"
-            android:screenOrientation="sensorPortrait"
-            android:exported="false" />
-
+            android:exported="false"
+            android:screenOrientation="sensorPortrait" />
         <activity
             android:name=".ForgotPassword"
-            android:screenOrientation="sensorPortrait"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="sensorPortrait" />
         <activity
             android:name=".ProfileActivity"
-            android:screenOrientation="sensorPortrait"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="sensorPortrait" />
         <activity
             android:name=".RegisterUser"
-            android:screenOrientation="sensorPortrait"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="sensorPortrait" />
         <activity
             android:name=".SplashActivity"
-            android:screenOrientation="sensorPortrait"
+            android:exported="true"
             android:label="Sapp"
-            android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+            android:screenOrientation="sensorPortrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
